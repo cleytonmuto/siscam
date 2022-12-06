@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 function Navbar() {
   return (
-    <div class="container-fluid">
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container">
           <a className="navbar-brand" href="" alt="">SISCAM</a>
@@ -11,6 +10,9 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
+            <li className="nav-item">
+                <Link className={'nav-link'} aria-current="page" to="/sigin">Login</Link>
+              </li>
               <li className="nav-item">
                 <Link className={'nav-link'} aria-current="page" to="/home">Início</Link>
               </li>
@@ -26,7 +28,6 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
   );
 }
 export default Navbar;
