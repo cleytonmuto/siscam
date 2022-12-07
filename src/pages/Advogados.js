@@ -22,7 +22,7 @@ function Advogados() {
     }
   }
   return (
-      <div className='container-fluid' style={{"border-radius":"25px","margin":"1em","height":"100%", "width": "98%", "padding": "10px", "background-color":"#fbfbfb","justify-content":"center" }}>
+      <div className='container-fluid' style={{"borderRadius":"25px","margin":"1em","height":"100%", "width": "98%", "padding": "10px", "backgroundColor":"#fbfbfb","justifyContent":"center" }}>
         {dadosAdvogados.length > 0 && (<table className='table table-striped table-hover'>
           <thead>
             <tr>
@@ -33,7 +33,11 @@ function Advogados() {
             {dadosAdvogados.map((elemento, i) => {
               return (<tr>
                 {colunas.map(col => {
-                  return (<td className={style.tdin+'text-center col'}>{elemento[col]}</td>);
+                  return (
+                  <td className={style.tdin+' text-center col'}>
+                    {elemento[col].length>40?elemento[col].substring(0,40)+ "...":elemento[col]}
+                    
+                    </td>);
                 })}
               </tr>)
             })}
