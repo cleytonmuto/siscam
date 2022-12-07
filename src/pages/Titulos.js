@@ -6,7 +6,7 @@ import style from './Titulos.module.css';
 function Titulos(){
   const [dadosTitulos, setDadosTitulos] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:7000/api/titulos/all')
+    axios.get('http://localhost:7000/api/titulos/short')
       .then((dados) => {
         setDadosTitulos(dados.data);
         console.log(dados.data)
