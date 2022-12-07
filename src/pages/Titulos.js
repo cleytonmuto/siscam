@@ -26,8 +26,8 @@ function Titulos(){
   }
   return(
   
-    <div className='container-fluid' style={{"borderRadius":"25px","margin":"1em","height":"100%", "width": "98%", "padding": "10px", "backgroundColor":"#fbfbfb","justifyContent":"center" }}>
-    {dadosTitulos.length > 0 && (<table className='table table-striped table-hover'>
+    <div className='container-fluid' style={{"borderRadius":"25px","margin":"1em","height":"100%", "width": "98%", "padding": "20px", "backgroundColor":"#Fbfbfb","justifyContent":"center" }}>
+    {dadosTitulos.length > 0 && (<table className='table table-striped table-hover' style={{"backgroundColor":"#Fbfbfb", "borderRadius":"25px"}}>
       <thead>
         <tr>
           {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas.toUpperCase()}</th>) })}
