@@ -1,9 +1,7 @@
 tr{
-  align-items: center;
-  justify-content: center;
   vertical-align: middle;
 }
 
-/* *{
-  border: 1px solid aqua;
-} */
+table{
+  background-color: #fff;
+}

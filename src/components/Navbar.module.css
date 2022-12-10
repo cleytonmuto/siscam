@@ -1,0 +1,12 @@
+nav .containernav{
+  margin-left: 3em !important;
+}
+li{
+  padding: 0 5px;
+  margin: 0 1px
+}
+li:hover {
+  background-color: rgba(220,220,220,0.7);
+  border-radius: 5px;
+  color:#34a0a4;
+}
