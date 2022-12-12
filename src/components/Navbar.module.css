@@ -3,10 +3,18 @@ nav .containernav{
 }
 li{
   padding: 0 5px;
-  margin: 0 1px
+  margin: 0 5px;
 }
 li:hover {
   background-color: rgba(220,220,220,0.7);
   border-radius: 5px;
-  color:#34a0a4;
+  color:black !important;
+}
+a{
+padding: -5px;
+margin: -5px;
+vertical-align: middle;
+}
+svg{
+  font-size: 1.4em !important;
 }

@@ -8,3 +8,11 @@ tr{
 table{
   background-color: #fff;
 }
+
+.mivv{
+font-size: 2em;
+}
+.edit,.visu{
+  font-size: 2em !important;
+  text-decoration: none !important;
+}

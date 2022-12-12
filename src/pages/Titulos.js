@@ -23,7 +23,7 @@ function Titulos() {
     for (const x in dadosTitulos[0]) {
       colunas.push(x);
     }
-  }
+  } 
   return (
 
     <div className='container-fluid' style={{ "borderRadius": "15px", "margin": "1em", "height": "100%", "width": "98%", "padding": "10px", "backgroundColor": "#fff", "justifyContent": "center" }}>
