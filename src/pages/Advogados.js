@@ -2,9 +2,11 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Advogados.module.css';
+import  './Advogados.module.css';
 import { FiEdit } from 'react-icons/fi'
 import { VscEye } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
+import {RxPlus} from 'react-icons/rx'
 function Advogados() {
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
   useEffect(() => {
@@ -25,7 +27,7 @@ function Advogados() {
     }
   }
   return (
-    <><button type="button" class="btn btn-primary">Cadastrar Advogados</button>
+    <><div className={style.fd}><button type="button" class="btn btn-primary"><RxPlus/>Cadastrar Advogados</button></div>
     <div className='container-fluid' style={{ "borderRadius": "15px", "margin": "1em", "height": "100%", "width": "98%", "padding": "10px", "backgroundColor": "#fff", "justifyContent": "center" }}>
       {dadosAdvogados.length > 0 && (<><table className='table table-striped table-hover'
         style={{ "backgroundColor": "#Fbfbfb", "borderRadius": "15px" }}>
