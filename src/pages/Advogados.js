@@ -25,8 +25,9 @@ function Advogados() {
     }
   }
   return (
+    <><button type="button" class="btn btn-primary">Cadastrar Advogados</button>
     <div className='container-fluid' style={{ "borderRadius": "15px", "margin": "1em", "height": "100%", "width": "98%", "padding": "10px", "backgroundColor": "#fff", "justifyContent": "center" }}>
-      {dadosAdvogados.length > 0 && (<table className='table table-striped table-hover'
+      {dadosAdvogados.length > 0 && (<><table className='table table-striped table-hover'
         style={{ "backgroundColor": "#Fbfbfb", "borderRadius": "15px" }}>
         <thead>
           <tr>
@@ -46,22 +47,26 @@ function Advogados() {
 
                 </>);
               })}
-              <td className='col-1 text-center mivv'>
-               <span><Link>
-                  <FiEdit className='edit'/>
-                </Link></span> 
-                <br/>
-                <span>
-                <Link className='visu'>
-                  <VscEye />
-                </Link>
-                </span> 
+              <td className='col-1 text-center '>
+                <div className='acao'>
+                    <Link>
+                      <FiEdit /> Editar
+                    </Link>
+                </div>
+                <br />
+                <div className='acao'>
+                    <Link >
+                      <VscEye /> Visualizar
+                    </Link>
+                </div>
+
               </td>
             </tr>)
           })}
         </tbody>
-      </table>)}
+      </table></>)}
     </div>
+    </>
   );
 }
 export default Advogados;

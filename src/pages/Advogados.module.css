@@ -1,7 +1,3 @@
-/* *{
-  border: 1px solid black;
-} */
-
 tr{
   vertical-align: middle;
 }
@@ -9,23 +5,26 @@ table{
   background-color: #fff;
 }
 
-.mivv{
-font-size: 2em;
+div a{
+  color: #FCA311;
+  text-decoration: none;
+  font-size: 1.1em;
+ 
 }
 
- 
-svg .visu{
-  color:black;
-  font-size: 2em !important;
-  text-decoration: none !important;
+div a:hover{
+  color:#14213D;
 }
-a .visu{
-  color:black;
-  font-size: 2em !important;
-  text-decoration: none !important;
+
+td div a{
+margin: -15px;
+padding: -15px;
 }
-span svg{
-  color:#34A0A4;
-  font-size: 1.5em !important;
-  text-decoration:none
+
+button{
+  margin: 1em;
+  display: flex;
+  align-items: flex-start;
+  background-color: #FCA311 !important;
+  border: #FCA311 1px solid !important;
 }
