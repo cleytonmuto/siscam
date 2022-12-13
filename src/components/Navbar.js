@@ -5,6 +5,8 @@ import {FaHandsHelping} from 'react-icons/fa';
 import {VscLaw,VscHome} from 'react-icons/vsc';
 import Logo from './Logo.svg';
 import Logo_titulos from './Logo_titulos.svg';
+import Logo_advogados from './Logo_advogados.svg';
+import Logo_home from './Logo_home.svg';
 function Navbar() { 
   return ( 
       <nav className="navbar navbar-expand-lg" style={{"background-color":"#52b69a"}}>
@@ -19,11 +21,11 @@ function Navbar() {
                 <Link className={'nav-link li'} aria-current="page"  style={{color:"#fff"}} to="/sigin">Login</Link>
               </li>
               <li className="nav-item" >
-                <Link className={'nav-link'} aria-current="page" style={{color:"#fff"}} to="/home"><VscHome/>Início</Link>
+                <Link className={'nav-link'} aria-current="page" style={{color:"#fff"}} to="/home"><img src={Logo_home} alt='logo' style={{ "border":"0", "margin-top":"-5px", "color":"#fff", width:"23px"}}/>Início</Link>
               </li>
               <li className="nav-item">
                 {/* <a className="nav-link" href="">Advogados</a> */}
-                <Link className={'nav-link'} aria-current="page"  style={{color:"#fff"}} to="/advogados"><VscLaw/>Advogados</Link>
+                <Link className={'nav-link'} aria-current="page"  style={{color:"#fff"}} to="/advogados"><img src={Logo_advogados} alt='logo' style={{ "border":"0", "margin-top":"-5px", "color":"#fff", width:"23px"}}/>Advogados</Link>
               </li>
               <li className="nav-item">
                 {/* <a className="nav-link" href="#">Títulos</a> */}
