@@ -3,11 +3,13 @@ import {Link} from 'react-router-dom';
 import './Navbar.module.css';
 import {FaHandsHelping} from 'react-icons/fa';
 import {VscLaw,VscHome} from 'react-icons/vsc';
+import Logo from './Logo.svg';
+import Logo_titulos from './Logo_titulos.svg';
 function Navbar() { 
   return ( 
       <nav className="navbar navbar-expand-lg" style={{"background-color":"#52b69a"}}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="" alt="" style={{ "fontFamily": 'Pacifico','color':"#fff", "marginRight": "2em", "marginLeft":"6em" }}><FaHandsHelping style={{"fontSize":"1.5em", "border":"0", "margin":"0"}}/>SISCAM</a>
+          <a className="navbar-brand" href="" alt="" style={{ "fontFamily": 'Pacifico','color':"#fff", "marginRight": "2em", "marginLeft":"6em" }}><img src={Logo} alt='logo' style={{ "border":"0", "margin-top":"-5px", "color":"#fff", width:"30px"}}/>SISCAM</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -25,7 +27,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 {/* <a className="nav-link" href="#">Títulos</a> */}
-                <Link className={'nav-link'} aria-current="page"  style={{color:"#fff"}} to="/titulos">Títulos</Link>
+                <Link className={'nav-link'} aria-current="page"  style={{color:"#fff"}} to="/titulos"><img src={Logo_titulos} alt='logo' style={{ "border":"0", "margin-top":"-5px", "color":"#fff", width:"23px"}}/>Títulos</Link>
               </li>
             </ul>
           </div>

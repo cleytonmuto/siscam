@@ -5,7 +5,7 @@ li{
   padding: 0 5px;
   margin: 0 5px;
 }
-li:hover {
+li:hover{
   background-color: rgba(220,220,220,0.7);
   border-radius: 5px;
   color:black !important;

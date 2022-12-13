@@ -47,13 +47,15 @@ function Advogados() {
                 </>);
               })}
               <td className='col-1 text-center mivv'>
-                <Link>
-                  <FiEdit className='edit'/>editar
-                </Link>
+               <span><Link>
+                  <FiEdit className='edit'/>
+                </Link></span> 
                 <br/>
-                <Link>
-                  <VscEye className='visu'/>visualizar
+                <span>
+                <Link className='visu'>
+                  <VscEye />
                 </Link>
+                </span> 
               </td>
             </tr>)
           })}

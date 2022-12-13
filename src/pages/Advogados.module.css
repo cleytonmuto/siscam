@@ -12,7 +12,20 @@ table{
 .mivv{
 font-size: 2em;
 }
-.edit,.visu{
+
+ 
+svg .visu{
+  color:black;
   font-size: 2em !important;
   text-decoration: none !important;
+}
+a .visu{
+  color:black;
+  font-size: 2em !important;
+  text-decoration: none !important;
+}
+span svg{
+  color:#34A0A4;
+  font-size: 1.5em !important;
+  text-decoration:none
 }
