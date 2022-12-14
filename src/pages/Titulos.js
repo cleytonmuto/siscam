@@ -51,7 +51,28 @@ function Titulos() {
         <tbody>
           {dadosTitulos.map((elemento, i) => {
             return (<tr>
-              {colunas.map(col => {
+              {colunas.map((col,i) => {
+                if(i%6===0 && i>1){
+                  return (
+                    <td className={style.tdin + ' text-center col-1'}>
+                      {elemento[col].length > 40 ?  (Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})).substring(0, 40) + "..." :(Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))}
+  
+                    </td>);
+                }
+                if(i%7===0 && i>1){
+                  return (
+                    <td className={style.tdin + ' text-center col-1'}>
+                      {elemento[col].length > 40 ?  (Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))}
+  
+                    </td>);
+                }
+                if(i%8===0 && i>1){
+                  return (
+                    <td className={style.tdin + ' text-center col-1'}>
+                      {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))}
+  
+                    </td>);
+                }
                 return (
                   <td className={style.tdin + ' text-center col-1'}>
                     {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
