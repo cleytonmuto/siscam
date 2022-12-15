@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
-import './Navbar.module.css';
+import style from './Navbar.module.css';
 // import {FaHandsHelping} from 'react-icons/fa';
 // import {VscLaw,VscHome} from 'react-icons/vsc';
 import Logo from './Logo.svg';
@@ -11,25 +11,28 @@ function Navbar() {
   return ( 
       <nav className="navbar navbar-expand-lg" style={{"background-color":"#14213d"}}>
         <div className="container-fluid">
-          <a className="navbar-brand" href='https://siscam.pge.pa.gov.br' alt="" style={{ "fontFamily": 'Pacifico','color':"#fca311", "marginRight": "2em", "marginLeft":"6em" }}><img src={Logo} alt='logo' style={{ "border":"0", "margin-top":"-5px", width:"35px"}}/>SISCAM</a>
+          <Link className={"navbar-brand "+style.styleTextBrand} to='/home' alt=""><img src={Logo} alt='logo' className={style.imgBrand}/>SISCAM</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className={"collapse navbar-collapse " + style.divmain} id="navbarNav">
             <ul className="navbar-nav">
             <li className="nav-item" >
-                <Link className={'nav-link li'} aria-current="page"  style={{color:"#fca311", fontFamily:'Roboto'}} to="/sigin">Login</Link>
+                <Link className={'nav-link'} aria-current="page" to="/sigin">Login</Link>
               </li>
               <li className="nav-item" >
-                <Link className={'nav-link'} aria-current="page" style={{color:"#fca311", fontFamily:'Roboto'}} to="/home"><img src={Logo_home} alt='logo' style={{ "border":"0", "margin-top":"-5px", width:"23px"}}/>Início</Link>
+                <Link className={'nav-link'} aria-current="page"  to="/home"><img src={Logo_home} alt='logo' className={style.img} />Início</Link>
               </li>
               <li className="nav-item">
                 {/* <a className="nav-link" href="">Advogados</a> */}
-                <Link className={'nav-link'} aria-current="page"  style={{color:"#fca311", fontFamily:'Roboto'}} to="/advogados"><img src={Logo_advogados} alt='logo' style={{ "border":"0", "margin-top":"-5px", width:"23px"}}/>Advogados</Link>
+                <Link className={'nav-link'} aria-current="page" to="/advogados"><img className={style.img}  src={Logo_advogados} alt='logo' />Advogados</Link>
               </li>
               <li className="nav-item">
                 {/* <a className="nav-link" href="#">Títulos</a> */}
-                <Link className={'nav-link'} aria-current="page"  style={{color:"#fca311", fontFamily:'Roboto'}} to="/titulos"><img src={Logo_titulos} alt='logo' style={{ "border":"0", "margin-top":"-5px", width:"23px"}}/>Títulos</Link>
+                <Link className={'nav-link'} aria-current="page" to="/titulos">
+                  <img className={style.img} src={Logo_titulos} alt='logo' />
+                  Títulos
+                  </Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,3 @@
-nav .containernav{
-  margin-left: 3em !important;
-}
 li{
   padding: 0 -5px;
   margin: 0 5px;
@@ -10,4 +7,27 @@ li a:hover{
   background-color: rgba(220,220,220,0.2);
   border-radius: 5px;
 
+}
+
+
+.divmain a{
+  color:#fca311 !important;
+  font-Family:'Roboto' !important;
+}
+
+.img{
+  border:0;
+  margin-top:-5px;
+  width:23px;
+}
+.imgBrand{
+  border:0;
+  margin-top:-5px;
+  width:35px;
+}
+.styleTextBrand{
+  font-family: 'Pacifico';
+  color:#fca311;
+  margin-right: 2em;
+  margin-left:6em; 
 }
