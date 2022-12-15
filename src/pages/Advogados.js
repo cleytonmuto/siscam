@@ -27,7 +27,7 @@ function Advogados() {
     }
   }
   return (
-    <><div className={style.fd}><button type="button" class="btn btn-primary"><RxPlus />Cadastrar Advogados</button></div>
+    <><div className={style.fd}><a href="/novoadvogado"><button type="button" class="btn btn-primary"><RxPlus />Cadastrar Advogados</button></a></div>
       <div className='container-fluid' style={{ "borderRadius": "15px", "margin": "1em", "height": "100%", "width": "98%", "padding": "10px", "backgroundColor": "#fff", "justifyContent": "center" }}>
         {dadosAdvogados.length > 0 && (<><table className='table table-striped table-hover'
           style={{ "backgroundColor": "#Fbfbfb", "borderRadius": "15px" }}>
