@@ -1,59 +1,81 @@
+import {useState} from 'react';
+
 import Input from '../form/Input';
+import SubmitButton from '../form/SubmitButton';
 import styles from './AdvogadoForm.module.css';
 
-function AdvogadoForm() {
+function AdvogadoForm({ handleSubmit, btnText, advogadoData}) {
+
+    const[advogado, setAdvogado] = useState(advogadoData || []);
+
+    const submit = (e) => { 
+        e.preventDefault();
+        handleSubmit(advogado);
+    }
+
+    function handleChange(e) {
+        setAdvogado({...advogado, [e.target.name]: e.target.value});
+    }
 
     return(
-        <form className={styles.form}>
+        <form onSubmit={submit} className={styles.form}>
             <Input
                 type="text"
                 text="Nome"
                 name="nome"
-                placeholder="Digite o nome do advogado">
+                placeholder="Digite o nome do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="OAB"
                 name="oab"
-                placeholder="Digite a OAB do advogado">
+                placeholder="Digite a OAB do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="CPF"
                 name="cpf"
-                placeholder="Digite o CPF do advogado">
+                placeholder="Digite o CPF do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="Telefone"
                 name="telefone"
-                placeholder="Digite o telefone do advogado">
+                placeholder="Digite o telefone do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="E-mail"
                 name="email"
-                placeholder="Digite o e-mail do advogado">
+                placeholder="Digite o e-mail do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="Endereço"
                 name="endereco"
-                placeholder="Digite o endereço do advogado">
+                placeholder="Digite o endereço do advogado"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="Observação"
                 name="observacao"
-                placeholder="Digite uma observação">
+                placeholder="Digite uma observação"
+                handleOnChange={handleChange}>
             </Input>
             <Input
                 type="text"
                 text="Senha"
                 name="senha"
-                placeholder="Digite uma senha">
+                placeholder="Digite uma senha"
+                handleOnChange={handleChange}>
             </Input>
-            <div><input type="submit" value="Cadastrar advogado"></input></div>
+            <SubmitButton text={btnText}></SubmitButton>
         </form>
     );
 }
