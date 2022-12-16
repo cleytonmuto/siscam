@@ -31,3 +31,18 @@ li a:hover{
   margin-right: 2em;
   margin-left:6em; 
 }
+nav button{
+  color:#fca311 !important;
+  background-color: #fca311 !important;
+  border: none !important;
+
+}
+
+
+nav button::before{
+  border: none !important;
+}
+
+nav button::after{
+  border: none !important;
+}

@@ -20,13 +20,16 @@ function Titulos() {
       })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
-      })
+      });
 
     axios.get(`http://localhost:7000/api/titulos/countRows`)
     .then((dados)=>{
-      setTotalTitulos(dados.status)
+      setTotalTitulos(dados.data.numLinhas);
+      console.log("fsad",dados.data.numLinhas);
      
-    })
+    }) .catch((erro) => {
+      console.log("não foi possível recuperar os dados da rota digitada")
+    });
 
   }, [offset, page])
 
