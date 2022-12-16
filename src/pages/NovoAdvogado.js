@@ -1,4 +1,4 @@
-import AdvogadoForm from '../advogado/AdvogadoForm';
+import AdvogadoForm from '../components/advogado/AdvogadoForm';
 
 import styles from './NovoAdvogado.module.css';
 
