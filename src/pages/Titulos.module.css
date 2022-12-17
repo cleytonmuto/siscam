@@ -5,3 +5,9 @@ tr{
 table{
   background-color: #fff;
 }
+.div_container{
+  background-color: #fff;
+  width: 98%;
+  padding: .5em .5em .1em .5em;
+  border-radius: 15px;
+}

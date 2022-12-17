@@ -1,21 +1,11 @@
-
 tr {
   vertical-align: middle;
-}
-
-table {
-  background-color: #fff;
 }
 
 div a {
   color: #FCA311;
   text-decoration: none;
   font-size: 1.1em;
-
-}
-
-div a:hover {
-  color: #14213D;
 }
 
 td div a {
@@ -34,7 +24,6 @@ td div a {
   justify-content:center;
   align-items:center;
   height: 38px;
-
 }
 
 button svg {
@@ -48,4 +37,23 @@ button svg {
   flex-direction: row;
   justify-content:flex-end;
   align-items:center;
+}
+
+
+.div_container{
+  background-color: #fff;
+  width: 98%;
+  padding: .5em .5em .1em .5em;
+  border-radius: 15px;
+}
+
+.div_container span{
+  text-align: center;
+  display: inline-block;
+  white-space:nowrap;  
+}
+.div_container span a:hover{
+transition: 0.7s;
+color: #14213d;
+border-bottom:1px #14213d solid ;
 }
