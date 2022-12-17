@@ -11,3 +11,10 @@ table{
   padding: .5em .5em .1em .5em;
   border-radius: 15px;
 }
+.paginacao{
+  background-color: #fff;
+  width: 98%;
+  display: flex;
+  align-items: flex-start;
+  padding: 0px;
+}

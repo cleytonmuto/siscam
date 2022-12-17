@@ -27,7 +27,7 @@ function Advogados() {
     }
   }
   return (
-    <div>
+    <div className='container-fluid'>
       <div className={style.fd}><Link to="/novoadvogado">
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar Advogados
