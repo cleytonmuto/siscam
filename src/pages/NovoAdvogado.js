@@ -1,6 +1,5 @@
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
-// import { useEffect } from 'react';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import styles from './NovoAdvogado.module.css';
 
@@ -10,26 +9,17 @@ function NovoAdvogado() {
 
     function createPost(advogado) {
 
-        // useEffect(() => { // não usa o userEffect()?
             axios.post('http://localhost:7000/api/usuarios/add', { // é nesse add mesmo?
-                /* nome: 'nome', // aqui puxarei os campos
-                oab: 'oab',
-                cpf: 'cpf',
-                telefone: 'telefone',
-                endereco: 'endereco',
-                observacao: 'observacao',
-                senha: 'senha' */
                 body: JSON.stringify(advogado),
             })
                 .then((dados) => {
-                    console.log(dados);
+                    console.log(dados.data);
                     // redirect
                 })
                 .catch((erro) => {
                     console.log(erro);
-                })
-        // }, []);
-    
+                });
+
     }
 
     return (
