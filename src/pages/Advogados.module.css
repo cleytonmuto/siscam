@@ -3,7 +3,7 @@ tr {
 }
 
 div a {
-  color: #FCA311;
+  color: #1B98E0;
   text-decoration: none;
   font-size: 1.1em;
 }
@@ -15,8 +15,8 @@ td div a {
 
 .fd button{
   margin: 1em;
-  background-color: #FCA311 !important;
-  border: #FCA311 1px solid !important;
+  background-color: #1B98E0 !important;
+  border: #1B98E0 1px solid !important;
   color: #e5e5e5;
   width: 250px;
   display: flex;

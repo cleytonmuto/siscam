@@ -30,24 +30,24 @@
   justify-items: center;
   display: flex;
   justify-content: center;
-  background-color: #FCA311 !important;
-  border: #FCA311 1px solid !important;
+  background-color: #1B98E0 !important;
+  border: #1B98E0 1px solid !important;
   color: #e5e5e5;
 }  
 
 .precedingAndNext:disabled{
-  background-color: #bd7f1b !important;
+  background-color: #13293D!important;
   height: 20px !important;
   padding: 1em;
 
-  border:#bd7f1b 1px solid !important;
+  border:#13293D 1px solid !important;
   width: 80px;
 }
 .precedingAndNext:enabled{
-  background-color: #FCA311 !important;
+  background-color: #1B98E0 !important;
   height: 20px !important;
   padding: 1em;
-  border:#FCA311 1px solid !important;
+  border:#1B98E0 1px solid !important;
   width: 80px;
 }
 

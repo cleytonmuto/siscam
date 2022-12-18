@@ -1,48 +1,26 @@
+.brand_sis{
+  font-family:'Pacifico' !important ;
+  color:#1b98E0 !important;
+  padding-right: 2em;
+}
+svg{
+  font-size: 150%;
+}
 li{
-  padding: 0 -5px;
-  margin: 0 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 1px;
+  font-size: 1.1em;
 }
-li a:hover{
-  transition: 0.7s;
-  background-color: rgba(220,220,220,0.2);
-  border-radius: 5px;
-
+li:hover{
+background-color: #DCDCDC;
+border-radius: 5px;
 }
-
-
-.divmain a{
-  color:#fca311 !important;
-  font-Family:'Roboto' !important;
-}
-
-.img{
-  border:0;
-  margin-top:-5px;
-  width:23px;
-}
-.imgBrand{
-  border:0;
-  margin-top:-5px;
-  width:35px;
-}
-.styleTextBrand{
-  font-family: 'Pacifico';
-  color:#fca311;
-  margin-right: 2em;
-  margin-left:6em; 
-}
-nav button{
-  color:#fca311 !important;
-  background-color: #fca311 !important;
-  border: none !important;
-
-}
-
-
-nav button::before{
-  border: none !important;
-}
-
-nav button::after{
-  border: none !important;
+img{
+  height: 2em;
+  width: 5em;
+  border-right: #000 solid 1px;
 }
