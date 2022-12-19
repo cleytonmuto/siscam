@@ -10,11 +10,13 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData}) {
 
     const submit = (e) => { 
         e.preventDefault();
+        // console.log(advogado);
         handleSubmit(advogado);
     }
 
     function handleChange(e) {
         setAdvogado({...advogado, [e.target.name]: e.target.value});
+        console.log(advogado);
     }
 
     return(

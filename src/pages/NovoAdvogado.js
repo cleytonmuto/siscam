@@ -1,11 +1,11 @@
 import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import styles from './NovoAdvogado.module.css';
 
 function NovoAdvogado() {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     function createPost(advogado) {
 
@@ -16,9 +16,10 @@ function NovoAdvogado() {
                 },
                 body: JSON.stringify(advogado),
             }).then((resp) => resp.json())
-                .then((data) => {
+              .then((data) => {
                     console.log(data);
                     // redirect
+                    navigate('/advogados', {message: 'Advogado cadastrado com sucesso!'});
                 })
                 .catch((erro) => {
                     console.log(erro);
