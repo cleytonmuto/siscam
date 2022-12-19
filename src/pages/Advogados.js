@@ -7,13 +7,14 @@ import { FiEdit } from 'react-icons/fi'
 import { VscEye } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 import { RxPlus } from 'react-icons/rx'
+
 function Advogados() {
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
   useEffect(() => {
-    axios.get('http://10.96.5.97:7000/api/usuarios/short')
+    axios.get('http://localhost:7000/api/usuarios/short')
       .then((dados) => {
         setDadosAdvogados(dados.data);
-        console.log(dados.data)
+        console.log(dados.data);
       })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
@@ -27,7 +28,7 @@ function Advogados() {
     }
   }
   return (
-    <div className={'container-fluid '+style.divadvogados}>
+    <div className={'container-fluid ' + style.divadvogados}>
       <div className={style.fd}><Link to="/novoadvogado">
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar Advogados

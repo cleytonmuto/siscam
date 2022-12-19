@@ -24,56 +24,64 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData}) {
                 text="Nome"
                 name="nome"
                 placeholder="Digite o nome do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.nome}>
             </Input>
             <Input
                 type="text"
                 text="OAB"
                 name="oab"
                 placeholder="Digite a OAB do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.oab}>
             </Input>
             <Input
                 type="text"
                 text="CPF"
                 name="cpf"
                 placeholder="Digite o CPF do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.cpf}>
             </Input>
             <Input
                 type="text"
                 text="Telefone"
                 name="telefone"
                 placeholder="Digite o telefone do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.telefone}>
             </Input>
             <Input
                 type="text"
                 text="E-mail"
                 name="email"
                 placeholder="Digite o e-mail do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.email}>
             </Input>
             <Input
                 type="text"
                 text="Endereço"
                 name="endereco"
                 placeholder="Digite o endereço do advogado"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.endereco}>
             </Input>
             <Input
                 type="text"
                 text="Observação"
                 name="observacao"
                 placeholder="Digite uma observação"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.observacao}>
             </Input>
             <Input
                 type="text"
                 text="Senha"
-                name="senha"
+                name="password"
                 placeholder="Digite uma senha"
-                handleOnChange={handleChange}>
+                handleOnChange={handleChange}
+                value={advogado.password}>
             </Input>
             <SubmitButton text={btnText}></SubmitButton>
         </form>

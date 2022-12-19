@@ -9,11 +9,15 @@ function NovoAdvogado() {
 
     function createPost(advogado) {
 
-            axios.post('http://localhost:7000/api/usuarios/add', { // é nesse add mesmo?
+            fetch('http://localhost:7000/api/usuarios/add', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
                 body: JSON.stringify(advogado),
-            })
-                .then((dados) => {
-                    console.log(dados.data);
+            }).then((resp) => resp.json())
+                .then((data) => {
+                    console.log(data);
                     // redirect
                 })
                 .catch((erro) => {
