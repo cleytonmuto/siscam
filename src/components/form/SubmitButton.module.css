@@ -1,8 +1,9 @@
 .btn {
     margin: 1em;
-    background-color: #1B98E0 !important;
-    border: #1B98E0 1px solid !important;
-    color: #e5e5e5;
+    background-color: #21dbae !important;
+    border: #21dbae;
+    border-radius: 5px  !important;
+    color: #fff;
     width: 250px;
     display: flex;
     flex-direction: row;

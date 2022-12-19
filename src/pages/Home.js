@@ -6,7 +6,10 @@ function Home() {
     <div className={'container-fluid ' + style.fundo}>
       <div className={'container-fluid ' + style.ca}>
         <div className={'container-fluid ' + style.backgroundimg}>
-          Bem-Vindo ao Sistema da Câmara de Conciliação da PGE-PA
+
+          Bem-Vindo!<br/>SISCAM-PGE/PA
+
+
         </div>
       </div>
     </div>
