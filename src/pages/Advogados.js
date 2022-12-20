@@ -7,6 +7,8 @@ import { FiEdit } from 'react-icons/fi'
 import { VscEye } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 import { RxPlus } from 'react-icons/rx'
+import {useLocation} from 'react-router-dom';
+import Message from '../components/Message';
 
 function Advogados() {
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
@@ -27,8 +29,19 @@ function Advogados() {
       colunas.push(x);
     }
   }
+
+  const location = useLocation();
+  let message = '';
+
+  if(location.state) {
+    message = location.state.message;
+  }
+
   return (
     <div className={'container-fluid ' + style.divadvogados}>
+       <div>
+        {message && <Message type="success" msg={message}></Message>}
+      </div>
       <div className={style.fd}><Link to="/novoadvogado">
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar Advogados

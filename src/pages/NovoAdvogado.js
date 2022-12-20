@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import styles from './NovoAdvogado.module.css';
@@ -19,7 +19,7 @@ function NovoAdvogado() {
               .then((data) => {
                     console.log(data);
                     // redirect
-                    navigate('/advogados', {message: 'Advogado cadastrado com sucesso!'});
+                    navigate('/advogados', {state: {message: 'Advogado cadastrado com sucesso!'}});
                 })
                 .catch((erro) => {
                     console.log(erro);
