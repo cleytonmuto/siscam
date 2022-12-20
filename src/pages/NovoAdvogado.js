@@ -19,10 +19,10 @@ function NovoAdvogado() {
               .then((data) => {
                     console.log(data);
                     // redirect
-                    navigate('/advogados', {state: {message: 'Advogado cadastrado com sucesso!'}});
+                    navigate('/advogados', {state: {message: data.message}});
                 })
-                .catch((erro) => {
-                    console.log(erro);
+                .catch((err) => {
+                    console.log(err.message);
                 });
 
     }
