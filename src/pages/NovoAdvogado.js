@@ -30,7 +30,6 @@ function NovoAdvogado() {
     return (
         <div className={styles.novoadvogado_container}>
             <h1>Cadastro de Advogados</h1>
-            <p>Cadastre os dados do advogado</p>
             <AdvogadoForm handleSubmit={createPost} btnText="Cadastrar advogado"></AdvogadoForm>
         </div>
     );
