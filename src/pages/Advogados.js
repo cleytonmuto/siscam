@@ -7,11 +7,13 @@ import { FiEdit } from 'react-icons/fi'
 import { VscEye } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 import { RxPlus } from 'react-icons/rx'
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Message from '../components/Message';
 
 function Advogados() {
+  const [campoPesquisa, setCampoPesquisa] = useState('');
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
+  
   useEffect(() => {
     axios.get('http://localhost:7000/api/usuarios/short')
       .then((dados) => {
@@ -33,19 +35,28 @@ function Advogados() {
   const location = useLocation();
   let message = '';
 
-  if(location.state) {
+  if (location.state) {
     message = location.state.message;
   }
 
   return (
     <div className={'container-fluid ' + style.divadvogados}>
-       <div>
+      <div>
         {message && <Message type="success" msg={message}></Message>}
       </div>
+
+     
       <div className={style.fd}><Link to="/novoadvogado">
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar Advogados
         </button></Link>
+      </div>
+
+      <div className={style.buscaadv}>
+        <div className={style.campopesq+" input-group mb-1"}>
+          <input required type="text" class="form-control" placeholder="Digite o nome do advogado" aria-label="Recipient's username" aria-describedby="btnPesquisarAdv" />
+          <button class="btn btn-outline-secondary" type="button" id="btnPesquisarAdv">Pesquisar</button>
+        </div>
       </div>
       <div className={'container-fluid ' + style.div_container} >
         {dadosAdvogados.length > 0 && (<>
