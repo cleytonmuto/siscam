@@ -34,15 +34,17 @@ function Advogados() {
 
   const location = useLocation();
   let message = '';
+  let type = '';
 
   if (location.state) {
     message = location.state.message;
+    type = location.state.type;
   }
 
   return (
     <div className={'container-fluid ' + style.divadvogados}>
       <div>
-        {message && <Message type="success" msg={message}></Message>}
+        {message && <Message type={type} msg={message}></Message>}
       </div>
 
      

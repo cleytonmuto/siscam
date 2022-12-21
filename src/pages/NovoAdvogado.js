@@ -19,7 +19,11 @@ function NovoAdvogado() {
               .then((data) => {
                     console.log(data);
                     // redirect
-                    navigate('/advogados', {state: {message: data.message}});
+                    navigate('/advogados', {state: 
+                        {
+                            message: data.message,
+                            type: data.type
+                        }});
                 })
                 .catch((err) => {
                     console.log(err.message);
