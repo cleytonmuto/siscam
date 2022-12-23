@@ -6,8 +6,8 @@ function Home() {
     <div className={'container-fluid ' + style.fundo}>
       <div className={'container-fluid ' + style.ca}>
         <div className={'container-fluid ' + style.backgroundimg}>
-
-          Bem-Vindo!<br/>SISCAM-PGE/PA
+            <p>Bem-Vindo!<br/>SISCAM-PGE/PA</p>
+       
 
 
         </div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
 import Pagination from '../components/Pagination.js'
+import apiurl from '../services/apiurl';
 const LIMIT = 10
 function Titulos() {
 
@@ -13,7 +14,7 @@ function Titulos() {
   const [totalTitulos, setTotalTitulos] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:7000/api/titulos/short?offset=${offset}&page=${page}&limit=${LIMIT}`)
+    axios.get(`${apiurl()}/api/titulos/short?offset=${offset}&page=${page}&limit=${LIMIT}`)
       .then((dados) => {
         setDadosTitulos(dados.data);
 
@@ -22,7 +23,7 @@ function Titulos() {
         console.log("não foi possível recuperar os dados da rota digitada")
       });
 
-    axios.get(`http://localhost:7000/api/titulos/countRows`)
+    axios.get(`${apiurl()}/api/titulos/countRows`)
       .then((dados) => {
         setTotalTitulos(dados.data.numLinhas);
         console.log("fsad", dados.data.numLinhas);

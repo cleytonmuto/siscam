@@ -9,22 +9,32 @@ import { Link } from 'react-router-dom'
 import { RxPlus } from 'react-icons/rx'
 import { useLocation } from 'react-router-dom';
 import Message from '../components/Message';
+import apiurl from '../services/apiurl';
+import SearchInput from '../components/SearchInput';
 
 function Advogados() {
   const [campoPesquisa, setCampoPesquisa] = useState('');
+
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
-  
+
   useEffect(() => {
-    axios.get('http://localhost:7000/api/usuarios/short')
-      .then((dados) => {
-        setDadosAdvogados(dados.data);
-        console.log(dados.data);
-      })
+    axios.post(`${apiurl()}/api/usuarios/search`, { termo: campoPesquisa }).then((dados) => { setDadosAdvogados(dados.data)
+    console.log('aqui1',dados) })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
       })
+    //     setDadosAdvogados(dados.data);
+    // axios.get(`${apiurl()}/api/usuarios/short`)
+    //   .then((dados) => {
+    //     setDadosAdvogados(dados.data);
 
-  }, [])
+    //   })
+    //   .catch((erro) => {
+    //     console.log("não foi possível recuperar os dados da rota digitada")
+    //   })
+
+  }, [campoPesquisa])
+
   let colunas = []
   if (dadosAdvogados !== []) {
     for (const x in dadosAdvogados[0]) {
@@ -47,7 +57,7 @@ function Advogados() {
         {message && <Message type={type} msg={message}></Message>}
       </div>
 
-     
+
       <div className={style.fd}><Link to="/novoadvogado">
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar Advogados
@@ -55,12 +65,12 @@ function Advogados() {
       </div>
 
       <div className={style.buscaadv}>
-        <div className={style.campopesq+" input-group mb-1"}>
-          <input required type="text" class="form-control" placeholder="Digite o nome do advogado" aria-label="Recipient's username" aria-describedby="btnPesquisarAdv" />
-          <button class="btn btn-outline-secondary" type="button" id="btnPesquisarAdv">Pesquisar</button>
-        </div>
+        <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
       </div>
-      <div className={'container-fluid ' + style.div_container} >
+
+
+      {dadosAdvogados.length>0 ? (
+      <div className={'container-fluid ' + style.div_container}>
         {dadosAdvogados.length > 0 && (<>
           <div className='table-responsive'>
             <table className='table table-striped table-hover'>
@@ -101,7 +111,7 @@ function Advogados() {
             </table>
           </div>
         </>)}
-      </div>
+      </div>) :  <div className={'container-fluid ' + style.div_container}><div className={style.semCorrespondencia}>Não há correspondência para sua pesquisa!</div></div>}
     </div>
   );
 }

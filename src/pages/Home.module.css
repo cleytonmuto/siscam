@@ -1,26 +1,29 @@
 .fundo .backgroundimg {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-  font-family: 'pacifico';
+  font-family:  'roboto', sans-serif;
   /*Não Mexer*/
-  font-size: 3vw;
-  max-width: 40vw;
+  width: 70vw;
+  font-size:300%;
+  /* min-width: 5vw;*/
   border-radius: 25px;
-  height: 50vh;
+  height: 50vh;;
+  text-align: center;
+ padding: 1em;
+  
 }
 
 .fundo{
-  
+  background-attachment: fixed;
   align-items: center;
   justify-content: center;
   align-content: center; 
   display: flex;
   background-repeat: no-repeat;
   background-image: url('../images/frentepge.jpg');
-  background-color:brown;
   height: 93vh;
   background-position: center;
   background-attachment: fixed;

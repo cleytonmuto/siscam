@@ -80,7 +80,7 @@ border-bottom:1px #14213d solid ;
   vertical-align:middle;
   margin:0px;
 }
-.buscaadv .campopesq{
-  width: 50% !important;
-  padding-bottom: 0.5em;
+.div_container .semCorrespondencia{
+  text-align: center;
+  padding: 1em;
 }
