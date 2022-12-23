@@ -1,35 +1,33 @@
+
+.fundo{
+ background-image: url('../images/PGE.jpg');
+  min-height: 90vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;/*alinhamento horizontal*/
+  align-items: center;/*centraliza na vertical*/
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  
+}
+
 .fundo .backgroundimg {
-  background-color: rgba(255, 255, 255, 0.8);
+   background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   font-family:  'roboto', sans-serif;
   /*Não Mexer*/
-  width: 70vw;
+  max-width: 50vw;
+  min-width: 400px;
   font-size:300%;
   /* min-width: 5vw;*/
   border-radius: 25px;
-  height: 50vh;;
   text-align: center;
  padding: 1em;
-  
-}
-
-.fundo{
-  background-attachment: fixed;
-  align-items: center;
-  justify-content: center;
-  align-content: center; 
-  display: flex;
-  background-repeat: no-repeat;
-  background-image: url('../images/frentepge.jpg');
-  height: 93vh;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  position: relative;
- 
-
-
+ color: #fff ;
+  -webkit-text-stroke: .2px #000; /*borda do texto interno ao item*/
 }
