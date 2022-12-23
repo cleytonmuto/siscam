@@ -35,6 +35,8 @@ function Advogados() {
 
   }, [campoPesquisa])
 
+  console.log(dadosAdvogados);
+
   let colunas = []
   if (dadosAdvogados !== []) {
     for (const x in dadosAdvogados[0]) {
@@ -100,7 +102,7 @@ function Advogados() {
                         </Link>
                       </span>
                       <span className='align-middle'>
-                        <Link >
+                        <Link to={`/advogado/${dadosAdvogados[i].id}`}>
                           <VscEye /> Visualizar
                         </Link>
                       </span>

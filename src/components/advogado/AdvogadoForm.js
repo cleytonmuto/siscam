@@ -78,7 +78,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData}) {
                 value={advogado.observacao}>
             </Input>
             <Input
-                type="text"
+                type="password"
                 text="Senha"
                 name="password"
                 placeholder="Digite uma senha"
