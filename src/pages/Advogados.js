@@ -18,8 +18,11 @@ function Advogados() {
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
 
   useEffect(() => {
-    axios.post(`${apiurl()}/api/usuarios/search`, { termo: campoPesquisa }).then((dados) => { setDadosAdvogados(dados.data)
-    console.log('aqui1',dados) })
+    axios.post(`${apiurl()}/api/usuarios/search`, { termo: campoPesquisa })
+      .then((dados) => {
+        setDadosAdvogados(dados.data)
+        console.log('aqui1', dados)
+      })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
       })
@@ -66,54 +69,51 @@ function Advogados() {
         </button></Link>
       </div>
 
-      <div className={style.buscaadv}>
-        <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
-      </div>
+      <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
 
+      {dadosAdvogados.length > 0 ? (
+        <div className={'container-fluid ' + style.div_container}>
+          {dadosAdvogados.length > 0 && (<>
+            <div className='table-responsive'>
+              <table className='table table-striped table-hover'>
+                <thead>
+                  <tr>
+                    {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas.toUpperCase()}</th>) })}
+                    <th scope='row' className='col-1 text-center' key={210}><strong>AÇÕES</strong></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dadosAdvogados.map((elemento, i) => {
+                    return (<tr>
+                      {colunas.map((col, i) => {
+                        return (<>
+                          <td className={style.tdin + ' text-center col'}>
+                            {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
 
-      {dadosAdvogados.length>0 ? (
-      <div className={'container-fluid ' + style.div_container}>
-        {dadosAdvogados.length > 0 && (<>
-          <div className='table-responsive'>
-            <table className='table table-striped table-hover'>
-              <thead>
-                <tr>
-                  {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas.toUpperCase()}</th>) })}
-                  <th scope='row' className='col-1 text-center' key={210}><strong>AÇÕES</strong></th>
-                </tr>
-              </thead>
-              <tbody>
-                {dadosAdvogados.map((elemento, i) => {
-                  return (<tr>
-                    {colunas.map((col, i) => {
-                      return (<>
-                        <td className={style.tdin + ' text-center col'}>
-                          {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
+                          </td>
 
-                        </td>
+                        </>);
 
-                      </>);
-
-                    })}
-                    <td className='text-center'>
-                      <span className='align-middle'>
-                        <Link>
-                          <FiEdit /> Editar
-                        </Link>
-                      </span>
-                      <span className='align-middle'>
-                        <Link to={`/advogado/${dadosAdvogados[i].id}`}>
-                          <VscEye /> Visualizar
-                        </Link>
-                      </span>
-                    </td>
-                  </tr>)
-                })}
-              </tbody>
-            </table>
-          </div>
-        </>)}
-      </div>) :  <div className={'container-fluid ' + style.div_container}><div className={style.semCorrespondencia}>Não há correspondência para sua pesquisa!</div></div>}
+                      })}
+                      <td className='text-center'>
+                        <span className='align-middle'>
+                          <Link>
+                            <FiEdit /> Editar
+                          </Link>
+                        </span>
+                        <span className='align-middle'>
+                          <Link to={`/advogado/${dadosAdvogados[i].id}`}>
+                            <VscEye /> Visualizar
+                          </Link>
+                        </span>
+                      </td>
+                    </tr>)
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </>)}
+        </div>) : <div className={'container-fluid ' + style.div_container}><div className={style.semCorrespondencia}>Não há correspondência para sua pesquisa!</div></div>}
     </div>
   );
 }

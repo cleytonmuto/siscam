@@ -71,15 +71,7 @@ border-bottom:1px #14213d solid ;
 
 }
 
-.buscaadv{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  vertical-align:middle;
-  margin:0px;
-}
+
 .div_container .semCorrespondencia{
   text-align: center;
   padding: 1em;

@@ -13,9 +13,11 @@ const SearchInput = ({ value, onChange }) => {
   }
 
   return (
+    <div className={style.buscaadv}>
     <div className={style.campopesq + " input-group mb-1"}>
       <input required type="search" value={displayValue} onChange={handleChange} className="form-control" placeholder="Pesquisar" aria-label="Recipient's username" aria-describedby="btnPesquisarAdv" />
      <button class="btn btn-outline-secondary" type="button" disabled id="btnPesquisarAdv"><FcSearch /></button> 
+    </div>
     </div>
   );
 };;

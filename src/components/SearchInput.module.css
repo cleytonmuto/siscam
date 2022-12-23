@@ -17,3 +17,12 @@
     border-radius: 25em;
     width: 5em;
   }
+  .buscaadv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    vertical-align:middle;
+    margin:0px;
+  }

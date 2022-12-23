@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
 import Pagination from '../components/Pagination.js'
 import apiurl from '../services/apiurl';
+import SearchInput from  '../components/SearchInput.js'
 const LIMIT = 10
 function Titulos() {
 
@@ -13,15 +14,18 @@ function Titulos() {
   const [dadosTitulos, setDadosTitulos] = useState([]);
   const [totalTitulos, setTotalTitulos] = useState([]);
 
-  useEffect(() => {
-    axios.get(`${apiurl()}/api/titulos/short?offset=${offset}&page=${page}&limit=${LIMIT}`)
-      .then((dados) => {
-        setDadosTitulos(dados.data);
+  const [campoPesquisa, setCampoPesquisa] = useState('');
 
-      })
-      .catch((erro) => {
-        console.log("não foi possível recuperar os dados da rota digitada")
-      });
+  useEffect(() => {
+    axios.post(`${apiurl()}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
+    .then((dados) => {
+      setDadosTitulos(dados.data);
+      console.log('aqui1', dados)
+    })
+    .catch((erro) => {
+      console.log("não foi possível recuperar os dados da rota digitada")
+    })
+
 
     axios.get(`${apiurl()}/api/titulos/countRows`)
       .then((dados) => {
@@ -32,7 +36,7 @@ function Titulos() {
         console.log("não foi possível recuperar os dados da rota digitada")
       });
 
-  }, [offset, page])
+  }, [campoPesquisa,offset, page])
 
   let colunas = [];
 
@@ -44,8 +48,8 @@ function Titulos() {
   return ( 
     <div className={'container-fluid'} >
     
-        <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
-    
+    <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
+    <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)}/>
       <div className={'container-fluid ' + style.div_container}>
 
         {dadosTitulos.length > 0 && (
