@@ -19,7 +19,9 @@ function Titulos() {
   useEffect(() => {
     axios.post(`${apiurl()}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
     .then((dados) => {
-      setDadosTitulos(dados.data);
+      console.log("ddddd",dados)
+      setDadosTitulos(dados.data.rows);
+      setTotalTitulos(dados.data.count);
       console.log('aqui1', dados)
     })
     .catch((erro) => {
@@ -27,14 +29,14 @@ function Titulos() {
     })
 
 
-    axios.get(`${apiurl()}/api/titulos/countRows`)
-      .then((dados) => {
-        setTotalTitulos(dados.data.numLinhas);
-        console.log("fsad", dados.data.numLinhas);
+    // axios.get(`${apiurl()}/api/titulos/countRows`)
+    //   .then((dados) => {
+    //     setTotalTitulos(dados.data.numLinhas);
+    //     console.log("fsad", dados.data.numLinhas);
 
-      }).catch((erro) => {
-        console.log("não foi possível recuperar os dados da rota digitada")
-      });
+    //   }).catch((erro) => {
+    //     console.log("não foi possível recuperar os dados da rota digitada")
+    //   });
 
   }, [campoPesquisa,offset, page])
 
