@@ -4,11 +4,15 @@
   list-style: none;
   margin-top: 0.5em;
   margin-bottom: .4em;
+  padding: 0px;
 }
 
 .pagination li{
   margin: 0.1em
 }
+
+
+
 
 .pagination .pagination__item--active{
   font-weight: bold;
@@ -34,13 +38,19 @@
   border: #21dbae  1px solid !important;
   color: #fff;
 }  
+.pagination button:hover:enabled{
+
+  background-color:#1b98E0 !important;
+ 
+}  
 
 .precedingAndNext:disabled{
-  background-color: grey !important;
+  background-color: #21dbae50!important;
   height: 20px !important;
   padding: 1em;
-  border:grey 1px solid !important;
+  border:#21dbae 1px solid !important;
   width: 80px;
+  color: grey;
 }
 .precedingAndNext:enabled{
   background-color: #21dbae!important;

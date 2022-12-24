@@ -11,34 +11,30 @@ import { useLocation } from 'react-router-dom';
 import Message from '../components/Message';
 import apiurl from '../services/apiurl';
 import SearchInput from '../components/SearchInput';
-
+import Pagination from '../components/Pagination';
+import BtnCadastrar from '../components/BtnCadastrar';
+import SemCorrespondencia from '../components/SemCorrespondencia';
+const LIMIT = 10;
 function Advogados() {
   const [campoPesquisa, setCampoPesquisa] = useState('');
-
+  const [totalAdvogados, setTotalAdvogados] = useState([]);
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [page, setPage] = useState(0)
 
   useEffect(() => {
-    axios.post(`${apiurl()}/api/usuarios/search`, { termo: campoPesquisa })
+    axios.post(`${apiurl()}/api/usuarios/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
       .then((dados) => {
-        setDadosAdvogados(dados.data)
-        console.log('aqui1', dados)
+        setDadosAdvogados(dados.data.rows);
+        setTotalAdvogados(dados.data.count);
+
       })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
       })
-    //     setDadosAdvogados(dados.data);
-    // axios.get(`${apiurl()}/api/usuarios/short`)
-    //   .then((dados) => {
-    //     setDadosAdvogados(dados.data);
 
-    //   })
-    //   .catch((erro) => {
-    //     console.log("não foi possível recuperar os dados da rota digitada")
-    //   })
+  }, [campoPesquisa, page, offset])
 
-  }, [campoPesquisa])
-
-  console.log(dadosAdvogados);
 
   let colunas = []
   if (dadosAdvogados !== []) {
@@ -61,16 +57,9 @@ function Advogados() {
       <div>
         {message && <Message type={type} msg={message}></Message>}
       </div>
-
-
-      <div className={style.fd}><Link to="/novoadvogado">
-        <button type="button" class="btn btn-primary"><RxPlus />
-          Cadastrar Advogados
-        </button></Link>
-      </div>
-
+      <BtnCadastrar para={"/novoadvogado"} adicionaroque={"Advogado"} />
       <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
-
+      <Pagination limit={LIMIT} total={totalAdvogados} offset={offset} setOffset={setOffset} setPage={setPage} />
       {dadosAdvogados.length > 0 ? (
         <div className={'container-fluid ' + style.div_container}>
           {dadosAdvogados.length > 0 && (<>
@@ -113,7 +102,8 @@ function Advogados() {
               </table>
             </div>
           </>)}
-        </div>) : <div className={'container-fluid ' + style.div_container}><div className={style.semCorrespondencia}>Não há correspondência para sua pesquisa!</div></div>}
+        </div>) :
+        <SemCorrespondencia />}
     </div>
   );
 }

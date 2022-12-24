@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
 import Pagination from '../components/Pagination.js'
 import apiurl from '../services/apiurl';
-import SearchInput from  '../components/SearchInput.js'
+import SearchInput from '../components/SearchInput.js'
+import BtnCadastrar from '../components/BtnCadastrar';
+import SemCorrespondencia from '../components/SemCorrespondencia';
 const LIMIT = 10
 function Titulos() {
 
@@ -18,27 +20,17 @@ function Titulos() {
 
   useEffect(() => {
     axios.post(`${apiurl()}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
-    .then((dados) => {
-      console.log("ddddd",dados)
-      setDadosTitulos(dados.data.rows);
-      setTotalTitulos(dados.data.count);
-      console.log('aqui1', dados)
-    })
-    .catch((erro) => {
-      console.log("não foi possível recuperar os dados da rota digitada")
-    })
+      .then((dados) => {
 
+        setDadosTitulos(dados.data.rows);
+        setTotalTitulos(dados.data.count);
 
-    // axios.get(`${apiurl()}/api/titulos/countRows`)
-    //   .then((dados) => {
-    //     setTotalTitulos(dados.data.numLinhas);
-    //     console.log("fsad", dados.data.numLinhas);
+      })
+      .catch((erro) => {
+        console.log("não foi possível recuperar os dados da rota digitada")
+      })
 
-    //   }).catch((erro) => {
-    //     console.log("não foi possível recuperar os dados da rota digitada")
-    //   });
-
-  }, [campoPesquisa,offset, page])
+  }, [campoPesquisa, offset, page])
 
   let colunas = [];
 
@@ -47,14 +39,14 @@ function Titulos() {
       colunas.push(x);
     }
   }
-  return ( 
+  return (
     <div className={'container-fluid'} >
-    
-    <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
-    <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)}/>
+      <BtnCadastrar para={"/novotitulo"} adicionaroque={"Título"} />
+      <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
+      <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
       <div className={'container-fluid ' + style.div_container}>
 
-        {dadosTitulos.length > 0 && (
+        {dadosTitulos.length > 0 ? (
           <div className='table-responsive'>
             <table className='table table-striped table-hover'>
               <thead>
@@ -98,7 +90,7 @@ function Titulos() {
               </tbody>
             </table>
           </div>
-        )}
+        ) : <SemCorrespondencia />}
 
       </div>
     </div>

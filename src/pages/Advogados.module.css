@@ -1,4 +1,4 @@
- /* *{
+  /* *{
   border: 1px solid black;
 }  */
 tr {
@@ -29,14 +29,6 @@ td div a {
   height: 38px;
 }
 
-.fd button:hover{
-  background-color: rgba(33,219,174, 0.9)  !important;
-  border:none !important
-}
-
-button svg {
-  font-size: 1.5em !important;/*mudança no botão de cadastrar advogados*/
-}
 .fd{
   margin: 1em;
   height: 20px;
@@ -72,7 +64,3 @@ border-bottom:1px #14213d solid ;
 }
 
 
-.div_container .semCorrespondencia{
-  text-align: center;
-  padding: 1em;
-}

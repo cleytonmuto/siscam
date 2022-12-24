@@ -1,0 +1,28 @@
+.fd{
+  margin: 1em;
+  height: 20px;
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items:center;
+}
+.fd button{
+  margin: 1em;
+  background-color: #21dbae !important;
+  border: none !important;
+  color: #fff;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  height: 38px;
+}
+.fd button svg {
+  font-size: 1.5em !important;/*mudança no botão de cadastrar advogados*/
+}
+.fd button:hover{
+  background-color: rgba(33,219,174, .5)  !important;
+  border:none !important
+}

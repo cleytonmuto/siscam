@@ -1,0 +1,18 @@
+.div_container{
+  background-color: #fff;
+  width: 98%;
+  padding: .5em .5em .1em .5em;
+  border-radius: 15px;
+}
+.div_container .semCorrespondencia{
+  text-align: center;
+  padding: 1em;
+}
+.div_container .semCorrespondencia .colums{
+  flex-direction: column;
+
+}
+.colums img{
+height: 60px;
+
+}

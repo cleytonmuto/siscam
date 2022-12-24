@@ -6,6 +6,7 @@ import Advogados from './pages/Advogados.js';
 import Titulos from './pages/Titulos.js';
 import Login from './pages/Login.js';
 import NovoAdvogado from './pages/NovoAdvogado.js';
+import NovoTitulo from './pages/NovoTitulo.js';
 function App() {
   return ( 
     <Router>
@@ -17,6 +18,7 @@ function App() {
         <Route path='/sigin' element={<Login />}/>
         <Route path='/novoadvogado' element={<NovoAdvogado />}/>
         <Route path='/advogado/:id' element={<Advogado />}/>
+        <Route path='/novotitulo' element={<NovoTitulo />}/>
       </Routes>
     </Router>
   );
