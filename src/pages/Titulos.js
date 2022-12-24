@@ -7,9 +7,10 @@ import apiurl from '../services/apiurl';
 import SearchInput from '../components/SearchInput.js'
 import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
+import Loader from '../components/Loader.js';
 const LIMIT = 10
 function Titulos() {
-
+  const [removeLoader, setRemoveLoader] = useState(false);
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(0)
 
@@ -21,10 +22,9 @@ function Titulos() {
   useEffect(() => {
     axios.post(`${apiurl()}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
       .then((dados) => {
-
         setDadosTitulos(dados.data.rows);
         setTotalTitulos(dados.data.count);
-
+        setRemoveLoader(true);
       })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
@@ -91,7 +91,7 @@ function Titulos() {
             </table>
           </div>
         ) : <SemCorrespondencia />}
-
+  {!removeLoader && <Loader />}
       </div>
     </div>
 
