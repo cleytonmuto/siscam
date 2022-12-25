@@ -1,8 +1,8 @@
 
 .fundo{
  background-image: url('../images/PGE.jpg');
-  min-height: 90vh;
-  min-width: 100vw;
+  min-height: 89.6vh;
+  min-width: 90vw;
   display: flex;
   justify-content: center;/*alinhamento horizontal*/
   align-items: center;/*centraliza na vertical*/
@@ -21,9 +21,9 @@
   align-content: center;
   font-family:  'roboto', sans-serif;
   /*Não Mexer*/
+  min-width: 80vw;
   max-width: 50vw;
-  min-width: 400px;
-  font-size:300%;
+  font-size:3em;
   /* min-width: 5vw;*/
   border-radius: 25px;
   text-align: center;
