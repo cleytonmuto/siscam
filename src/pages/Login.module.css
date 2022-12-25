@@ -8,12 +8,16 @@
 .div_form{
   border-radius:15px;
   margin-top:6em;
-  width:400px;
+  width:90%;
+  max-width: 200px;
+  min-width: 40vw;
   padding:20px;
   background-color:#fbfbfb;
   justify-content:center;
- 
+  /* box-shadow: 0 0 0.5em 0.01em #1b98E0 !important; */
+  box-shadow: rgb(180 180 180 / 90%) 0px 0px 15px;
 }
+
 .div_form h1{
   font-family: 'Roboto', sans-serif !important;
   padding: 0px;
@@ -52,21 +56,30 @@
   margin: 10px;
   position: relative;
 }
+.campo input{
+  margin-bottom: 1.1em;
+}
 
 .div_form input:focus ~ label, input:valid ~ label{
   transition: 0.3s;
-  transform: translateY(-20px);
+  transform: translateY(-26px);
   font-size: 15px;
   color:#006494;
 }
 
-.div_form input:focus, input:valid{
+.div_form input:focus, input:valid, input:valid:hover:focus{
   box-shadow: 0 0 0 0;
   border: 0 none;
   border-bottom: 2px solid #006494;
   transition: 0.3s;
   outline: none;
 } 
+.div_form input:hover{
+  /* box-shadow: 0 0 .1em 0.1px #1b98E0 !important;
+  border-bottom: 2px solid transparent; */
+  box-shadow: rgb(180 180 180 / 80%) 0px 0px 15px;
+
+}
 .campo label{
   position: absolute;
   bottom: 10px;
@@ -74,4 +87,22 @@
   color: grey;
   font-family:'Roboto';
   transition: .3s;
+}
+.div_form .h1{
+  color: #333333;
+}
+.divButton{
+  display:'flex';
+  padding: "10px";
+  justify-content:'center';
+}
+.divButton button{
+  background-color: #1b98E0 !important;
+  color:#fbfbfb;
+  border: none;
+  width:40%;
+}
+.divButton button:hover{
+  box-shadow: rgb(180 180 180 / 100%) 0px 0px 15px;
+  
 }

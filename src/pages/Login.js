@@ -15,7 +15,7 @@ function Login() {
           <input required type="text" id="login" className="form-control" />
           <label for="login">
          
-              USUÁRIO
+              Usuário
            
           </label>
         </div>
@@ -26,11 +26,11 @@ function Login() {
           <div className={style.line}></div>
           <label for="password">
           
-              SENHA
+              Senha
             
           </label>
         </div>
-        <div className='text-center' style={{ padding: "10px" }}>
+        <div className={style.divButton+' text-center'}>
           <button type="button" className="btn btn-primary btn-block col-4"> <IoIosLogIn /> ENTRAR</button>
         </div>
       </form>
