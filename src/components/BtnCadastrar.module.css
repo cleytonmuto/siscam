@@ -12,7 +12,7 @@
   background-color: #21dbae !important;
   border: none !important;
   color: #fff;
-  width: 250px;
+  width: 15rem;
   display: flex;
   flex-direction: row;
   justify-content:center;
@@ -21,6 +21,7 @@
 }
 .fd button svg {
   font-size: 1.5em !important;/*mudança no botão de cadastrar advogados*/
+  color:#fff;
 }
 .fd button:hover{
   background-color: rgba(33,219,174, .5)  !important;

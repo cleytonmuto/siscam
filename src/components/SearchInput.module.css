@@ -1,28 +1,33 @@
-.campopesq{
+.campopesq {
   max-width: 70%;
-    padding-bottom: 0.5em;
-  }
-  .campopesq input{
-    box-shadow: 0 0 0 0 !important;
-  border: 0 none !important;
-  color:#1b98E0 !important;
-  border-radius: 25em;
-  }
-  .campopesq input::placeholder{
-  
-  color:#1b98E0 !important;
+  padding-bottom: 0.5em;
+}
 
-  }
-  .campopesq button{
-    border-radius: 25em;
-    width: 5em;
-  }
-  .buscaadv{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    vertical-align:middle;
-    margin:0px;
-  }
+.campopesq input {
+  box-shadow: 0 0 0 0 !important;
+  border: 0 none !important;
+  color: #1b98E0 !important;
+  border-radius: 25em;
+
+}
+
+.campopesq input::placeholder {
+
+  color: #1b98E0 !important;
+
+}
+
+.campopesq button {
+  border-radius: 25em;
+  width: 5em;
+}
+
+.buscaadv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  vertical-align: middle;
+  margin: 0px;
+}

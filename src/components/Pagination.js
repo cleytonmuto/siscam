@@ -17,13 +17,17 @@ function Pagination({ limit, total, offset, setOffset, setPage }) {
   }
 
   return (
-    <div className={'container-fluid '+style.pagei}>
+    <div className={'container-fluid ' + style.pagei}>
       <ul className={style.pagination}>
         <li>
           <button className={style.precedingAndNext} onClick={() => {
             OnPageChange(currentPage - 1)
             setPage(currentPage - 1)
-          }} disabled={currentPage === 1}>Anterior</button>
+          }} disabled={currentPage === 1}>
+
+            Anterior
+
+          </button>
         </li>
         {Array.from({ length: Math.min(MAX_ITEMS, pages) }).map((elemento, index) => index + first).map((page) => (
           <li key={page}>
