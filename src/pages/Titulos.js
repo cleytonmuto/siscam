@@ -8,12 +8,13 @@ import SearchInput from '../components/SearchInput.js'
 import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
 import Loader from '../components/Loader.js';
+import ErroBD from '../components/ErroBD';
 const LIMIT = 10
 function Titulos() {
   const [removeLoader, setRemoveLoader] = useState(false);
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(0)
-
+  const [erroBD, setErroBD] = useState('');
   const [dadosTitulos, setDadosTitulos] = useState([]);
   const [totalTitulos, setTotalTitulos] = useState([]);
 
@@ -25,9 +26,13 @@ function Titulos() {
         setDadosTitulos(dados.data.rows);
         setTotalTitulos(dados.data.count);
         setRemoveLoader(true);
+        setErroBD(false);
       })
       .catch((erro) => {
         console.log("não foi possível recuperar os dados da rota digitada")
+        setRemoveLoader(true);
+        setErroBD(true);
+        
       })
 
   }, [campoPesquisa, offset, page])
@@ -35,9 +40,9 @@ function Titulos() {
   let colunas = [];
 
   if (dadosTitulos !== []) {
-    for (const x in dadosTitulos[0]) {
+    for (const x in dadosTitulos[1]) {
       colunas.push(x);
-    }
+    } 
   }
   return (
     <div className={'container-fluid'} >
@@ -46,8 +51,8 @@ function Titulos() {
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
       <div className={'container-fluid ' + style.div_container}>
 
-        {dadosTitulos.length > 0 ? (
-          <div className='table-responsive'>
+        { !erroBD ? (dadosTitulos.length> 0?
+         ( <div className='table-responsive'>
             <table className='table table-striped table-hover'>
               <thead>
                 <tr>
@@ -89,8 +94,8 @@ function Titulos() {
                 })}
               </tbody>
             </table>
-          </div>
-        ) : <SemCorrespondencia />}
+          </div>): <SemCorrespondencia/>
+        ) : <ErroBD />}
   {!removeLoader && <Loader />}
       </div>
     </div>

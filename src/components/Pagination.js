@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Pagination.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const MAX_ITEMS = 7; //NUMERO MAXIMO DE BOTOES AO TODO
+const MAX_ITEMS = 5; //NUMERO MAXIMO DE BOTOES AO TODO
 const MAX_LEFT = (MAX_ITEMS - 1) / 2; //NUMERO MAXIMO DE BOTOES A ESQUERDA
 
 function Pagination({ limit, total, offset, setOffset, setPage }) {
