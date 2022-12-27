@@ -1,33 +1,31 @@
-
-.fundo{
- background-image: url('../images/PGE.jpg');
-  min-height: 89.6vh;
-  min-width: 90vw;
-  display: flex;
-  justify-content: center;/*alinhamento horizontal*/
-  align-items: center;/*centraliza na vertical*/
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-attachment: fixed;
-  
+.fundo {
+    background-image: url('../images/PGE.jpg');
+    min-height: 89.6vh;
+    min-width: 90vw;
+    display: flex;
+    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; /*centraliza na vertical*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .fundo .backgroundimg {
-   background-color: rgba(0, 0, 0, 0.4); 
-  backdrop-filter: blur(20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  font-family:  'roboto', sans-serif;
-  /*Não Mexer*/
-  min-width: 80vw;
-  max-width: 50vw;
-  font-size:3em;
-  /* min-width: 5vw;*/
-  border-radius: 25px;
-  text-align: center;
- padding: 1em;
- color: #fff ;
-  -webkit-text-stroke: .2px #000; /*borda do texto interno ao item*/
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-family: 'roboto', sans-serif;
+    /*Não Mexer*/
+    min-width: 80vw;
+    max-width: 50vw;
+    font-size: 3em;
+    /* min-width: 5vw;*/
+    border-radius: 25px;
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+    -webkit-text-stroke: 0.2px #000; /*borda do texto interno ao item*/
 }

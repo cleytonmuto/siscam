@@ -1,20 +1,22 @@
-tr{
-  vertical-align: middle;
+tr {
+    vertical-align: middle;
 }
 
-table{
-  background-color: #fff;
+table {
+    background-color: #fff;
 }
-.div_container{
-  background-color: #fff;
-  width: 98%;
-  padding: .5em .5em .1em .5em;
-  border-radius: 15px;
+
+.div_container {
+    background-color: #fff;
+    width: 98%;
+    padding: .5em .5em .1em .5em;
+    border-radius: 15px;
 }
-.paginacao{
-  background-color: #fff;
-  width: 98%;
-  display: flex;
-  align-items: flex-start;
-  padding: 0px;
+
+.paginacao {
+    background-color: #fff;
+    width: 98%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0px;
 }

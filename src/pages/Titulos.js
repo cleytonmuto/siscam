@@ -2,14 +2,15 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
-import Pagination from '../components/Pagination.js'
+import Pagination from '../components/Pagination'
 import apiurl from '../services/apiurl';
-import SearchInput from '../components/SearchInput.js'
+import SearchInput from '../components/SearchInput'
 import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
-import Loader from '../components/Loader.js';
+import Loader from '../components/Loader';
 import ErroBD from '../components/ErroBD';
-const LIMIT = 10
+const LIMIT = 10;
+
 function Titulos() {
   const [removeLoader, setRemoveLoader] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -17,7 +18,6 @@ function Titulos() {
   const [erroBD, setErroBD] = useState('');
   const [dadosTitulos, setDadosTitulos] = useState([]);
   const [totalTitulos, setTotalTitulos] = useState([]);
-
   const [campoPesquisa, setCampoPesquisa] = useState('');
 
   useEffect(() => {
@@ -32,9 +32,7 @@ function Titulos() {
         console.log("não foi possível recuperar os dados da rota digitada")
         setRemoveLoader(true);
         setErroBD(true);
-        
-      })
-
+      });
   }, [campoPesquisa, offset, page])
 
   let colunas = [];
@@ -42,7 +40,7 @@ function Titulos() {
   if (dadosTitulos !== []) {
     for (const x in dadosTitulos[1]) {
       colunas.push(x);
-    } 
+    }
   }
   return (
     <div className={'container-fluid'} >
@@ -50,9 +48,8 @@ function Titulos() {
       <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
       <div className={'container-fluid ' + style.div_container}>
-
-        { !erroBD ? (dadosTitulos.length> 0?
-         ( <div className='table-responsive'>
+        {!erroBD ? (dadosTitulos.length > 0 ?
+          (<div className='table-responsive'>
             <table className='table table-striped table-hover'>
               <thead>
                 <tr>
@@ -67,39 +64,35 @@ function Titulos() {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-
                           </td>);
                       }
                       if (i % 7 === 0 && i > 1) {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-
                           </td>);
                       }
                       if (i % 8 === 0 && i > 1) {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-
                           </td>);
                       }
                       return (
                         <td className={style.tdin + ' text-center col-1'}>
                           {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
-
                         </td>);
                     })}
                   </tr>)
                 })}
               </tbody>
             </table>
-          </div>): <SemCorrespondencia/>
+          </div>) : <SemCorrespondencia />
         ) : <ErroBD />}
-  {!removeLoader && <Loader />}
+        {!removeLoader && <Loader />}
       </div>
     </div>
-
   );
 }
+
 export default Titulos;
