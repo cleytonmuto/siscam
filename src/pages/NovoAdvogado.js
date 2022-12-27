@@ -34,7 +34,7 @@ function NovoAdvogado() {
     return (
         <div className={styles.novoadvogado_container}>
             <h1>Cadastro de Advogados</h1>
-            <AdvogadoForm handleSubmit={createPost} btnText="Cadastrar advogado"></AdvogadoForm>
+            <AdvogadoForm handleSubmit={createPost} btnText="Cadastrar Advogado"></AdvogadoForm>
         </div>
     );
 }
