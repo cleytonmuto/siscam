@@ -1,6 +1,13 @@
 .campopesq {
-  max-width: 70%;
+  max-width: 40vw;
   padding-bottom: 0.5em;
+}
+@media only screen and (max-width:500px) {
+  .campopesq{
+    max-width: 100vw;
+  } 
+
+  
 }
 
 .campopesq input {
@@ -13,7 +20,7 @@
 
 .campopesq input::placeholder {
 
-  color: #1b98E0 !important;
+  color:rgba(27,152,224,0.7) !important;
 
 }
 

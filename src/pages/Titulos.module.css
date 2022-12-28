@@ -1,5 +1,11 @@
-tr {
+td,tr{
     vertical-align: middle;
+    color:#333 !important;
+}
+th{
+    color:black;
+    font-size: 1.1em !important;
+    font-weight: 900;
 }
 
 table {

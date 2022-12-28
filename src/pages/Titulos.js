@@ -38,7 +38,7 @@ function Titulos() {
   let colunas = [];
 
   if (dadosTitulos !== []) {
-    for (const x in dadosTitulos[1]) {
+    for (const x in dadosTitulos[0]) {
       colunas.push(x);
     }
   }

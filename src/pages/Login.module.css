@@ -19,7 +19,7 @@
 }
 
 .div_form h1 {
-    font-family: 'Roboto', sans-serif !important;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
     padding: 0px;
     font-weight: 900;
 }
@@ -88,7 +88,7 @@ input:valid:hover:focus {
     bottom: 10px;
     left: 0;
     color: grey;
-    font-family: 'Roboto';
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     transition: .3s;
 }
 
@@ -107,6 +107,7 @@ input:valid:hover:focus {
     color: #fbfbfb;
     border: none;
     width: 40%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .divButton button:hover {

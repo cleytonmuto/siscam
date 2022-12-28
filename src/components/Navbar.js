@@ -14,7 +14,11 @@ import logo_pge from '../images/logo-pge.png'
 import { FcBusinessman } from 'react-icons/fc'; 
 import { FcSearch } from "react-icons/fc";
 import {FcInternal} from "react-icons/fc";
+import {IoIosPeople} from 'react-icons/io';
+import {GoLaw} from 'react-icons/go';
+import {FaFileContract} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {FaSignInAlt,FaHome} from 'react-icons/fa';
 
 function Navbar() { 
   return ( 
@@ -26,18 +30,18 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul className={"navbar-nav me-auto mb-2 mb-lg-0 "+style.ul}>
           <li className="nav-item">
-            <Link className={'nav-link'} aria-current="page" to="/"><FcHome />Home</Link>
+            <Link className={'nav-link'} aria-current="page" to="/"><FaHome /> HOME</Link>
           </li>
           <li className="nav-item">
-           <Link className={'nav-link'} to='/advogados'><FcBusinessman/>Advogados</Link>
+           <Link className={'nav-link'} to='/advogados'><GoLaw/> ADVOGADOS</Link>
           </li>
           <li className="nav-item">
-           <Link className={'nav-link'} to='/titulos'><FcSearch />Títulos</Link>
+           <Link className={'nav-link'} to='/titulos'><FaFileContract className={style.contract} /> TÍTULOS</Link>
           </li>
           <li className="nav-item">
-           <Link className={'nav-link'} to='/sigin'><FcInternal/>Login</Link>
+           <Link className={'nav-link'} to='/sigin'><FaSignInAlt/> LOGIN</Link>
           </li>
         </ul>
       </div>

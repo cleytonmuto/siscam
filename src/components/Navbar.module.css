@@ -1,12 +1,14 @@
 .brand_sis{
   font-family:'Pacifico' !important ;
-  color:#1b98E0 !important;
+  color: #1b98E0 !important;
   padding-right: 2em;
 }
 svg{
   font-size: 150%;
 }
-li{
+
+
+.ul li{
   align-items: center;
   display: flex;
   justify-content: center;
@@ -14,7 +16,19 @@ li{
   text-align: center;
   padding: 1px;
   font-size: 1.1em;
+  color:aqua !important;
 }
+.ul li a{
+  color:#1b98E0;
+  font-size: .85em;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  vertical-align: middle;
+}
+.ul li a svg{
+  font-size: 1.2rem;
+  vertical-align:sub;/*alinha os ícones no meio da palavra*/
+}
+
 li:hover{
 background-color: #DCDCDC;
 border-radius: 5px;
