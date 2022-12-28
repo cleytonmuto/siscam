@@ -19,7 +19,7 @@ svg{
   color:aqua !important;
 }
 .ul li a{
-  color:#1b98E0;
+  color:#555555;
   font-size: .85em;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   vertical-align: middle;
@@ -28,13 +28,20 @@ svg{
   font-size: 1.2rem;
   vertical-align:sub;/*alinha os ícones no meio da palavra*/
 }
+.ul li a:hover{
+  color:#1b98E0;
+}
 
-li:hover{
+/* li:hover{
 background-color: #DCDCDC;
 border-radius: 5px;
-}
+} */
 .brand_sis img{
   height: 2em;
   width: 5em;
   border-right: #000 solid 1px;
+}
+nav{
+  background-color: #fbfbfb !important;
+  box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px;
 }

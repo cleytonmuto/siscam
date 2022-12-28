@@ -22,7 +22,7 @@ import {FaSignInAlt,FaHome} from 'react-icons/fa';
 
 function Navbar() { 
   return ( 
-    <nav className={"navbar navbar-expand-lg bg-light"}>
+    <nav className={"navbar navbar-expand-lg "} >
     <div className="container fluid">
    
       <Link className='navbar-brand' to='/'><span className={style.brand_sis}><img alt="Logo" src={logo_pge}/> SISCAM</span></Link>
