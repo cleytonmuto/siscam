@@ -13,6 +13,8 @@ import SearchInput from '../components/SearchInput';
 import Pagination from '../components/Pagination';
 import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
+import Loader from '../components/Loader';
+import ErroBD from '../components/ErroBD';
 const LIMIT = 10;
 
 function Advogados() {
@@ -21,6 +23,10 @@ function Advogados() {
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(0);
+
+  const [semCorrespondenciaState, setSemCorrespondenciaState] = useState(false);
+  const [erroBD, setErroBD] = useState(false);
+  const [removeLoader, setRemoveLoader] = useState(true);
 
   useEffect(() => {
     axios
@@ -31,11 +37,17 @@ function Advogados() {
       .then((dados) => {
         setDadosAdvogados(dados.data.rows);
         setTotalAdvogados(dados.data.count);
+        setRemoveLoader(false);
+        setErroBD(false);
+        setSemCorrespondenciaState(true)
       })
       .catch((erro) => {
         console.log(
           'não foi possível recuperar os dados da rota digitada'
         );
+        setErroBD(true);
+        setRemoveLoader(false);
+        setSemCorrespondenciaState(false);
       });
   }, [campoPesquisa, page, offset]);
 
@@ -72,93 +84,90 @@ function Advogados() {
         setOffset={setOffset}
         setPage={setPage}
       />
-      {dadosAdvogados.length > 0 ? (
-        <div className={'container-fluid ' + style.div_container}>
-          {dadosAdvogados.length > 0 && (
-            <>
-              <div className="table-responsive">
-                <table className="table table-striped table-hover">
-                  <thead>
-                    <tr>
-                      {colunas.map((colunas, i) => {
-                        return (
-                          <th
-                            scope="row"
-                            className="col-1 text-center"
-                            key={i}
-                          >
-                            {colunas.toUpperCase()}
-                          </th>
-                        );
-                      })}
+      <div className={'container-fluid ' + style.div_container}>
+
+        {dadosAdvogados.length > 0 ? (
+          <div className="table-responsive">
+            <table className="table table-striped table-hover">
+              <thead>
+                <tr>
+                  {colunas.map((colunas, i) => {
+                    return (
                       <th
                         scope="row"
                         className="col-1 text-center"
-                        key={210}
+                        key={i}
                       >
-                        <strong>AÇÕES</strong>
+                        {colunas.toUpperCase()}
                       </th>
+                    );
+                  })}
+                  <th
+                    scope="row"
+                    className="col-1 text-center"
+                    key={210}
+                  >
+                    <strong>AÇÕES</strong>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {dadosAdvogados.map((elemento, i) => {
+                  return (
+                    <tr>
+                      {colunas.map((col, i) => {
+                        return (
+                          <>
+                            <td
+                              className={
+                                style.tdin +
+                                ' text-center col'
+                              }
+                            >
+                              {elemento[
+                                col
+                              ].length >
+                                40
+                                ? elemento[
+                                  col
+                                ].substring(
+                                  0,
+                                  40
+                                ) +
+                                '...'
+                                : elemento[
+                                col
+                                ]}
+                            </td>
+                          </>
+                        );
+                      })}
+                      <td className="text-center">
+                        <span className="align-middle">
+                          <Link>
+                            <FiEdit />{' '}
+                            Editar
+                          </Link>
+                        </span>
+                        <span className="align-middle">
+                          <Link
+                            to={`/advogado/${dadosAdvogados[i].id}`}
+                          >
+                            <VscEye />{' '}
+                            Visualizar
+                          </Link>
+                        </span>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {dadosAdvogados.map((elemento, i) => {
-                      return (
-                        <tr>
-                          {colunas.map((col, i) => {
-                            return (
-                              <>
-                                <td
-                                  className={
-                                    style.tdin +
-                                    ' text-center col'
-                                  }
-                                >
-                                  {elemento[
-                                    col
-                                  ].length >
-                                    40
-                                    ? elemento[
-                                      col
-                                    ].substring(
-                                      0,
-                                      40
-                                    ) +
-                                    '...'
-                                    : elemento[
-                                    col
-                                    ]}
-                                </td>
-                              </>
-                            );
-                          })}
-                          <td className="text-center">
-                            <span className="align-middle">
-                              <Link>
-                                <FiEdit />{' '}
-                                Editar
-                              </Link>
-                            </span>
-                            <span className="align-middle">
-                              <Link
-                                to={`/advogado/${dadosAdvogados[i].id}`}
-                              >
-                                <VscEye />{' '}
-                                Visualizar
-                              </Link>
-                            </span>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            </>
-          )}
-        </div>
-      ) : (
-        <SemCorrespondencia />
-      )}
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+        ) : erroBD ? <ErroBD /> : semCorrespondenciaState && <SemCorrespondencia />}
+        {removeLoader && (<Loader />)}
+      </div>
     </div>
   );
 }
