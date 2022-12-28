@@ -20,7 +20,7 @@
   height: 38px;
 }
 .fd button svg {
-  font-size: 1.5em !important;/*mudança no botão de cadastrar advogados*/
+  font-size: 1.5em !important;
   color:#fff;
 }
 .fd button:hover{

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { BsFillExclamationTriangleFill } from 'react-icons/bs';
 import style from '../components/ErroBD.css';
 function ErroBD() {
