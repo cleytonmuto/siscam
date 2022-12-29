@@ -33,29 +33,32 @@
   justify-items: center;
   display: flex;
   justify-content: center;
-  background-color: #21dbae  !important;
-  border: #21dbae  1px solid !important;
+  background-color: #1b98e0  !important;
+  border: #1b98e0  1px solid !important;
   color: #fff;
+  border-radius: 5px;
+  padding: 1em !important;
 }  
 .pagination button:hover:enabled{
-  background-color:#1b98E0 !important;
+  background-color:#006494  !important;
   border:none;
 }  
 
 .precedingAndNext:disabled{
-  background-color: #21dbae50!important;
+  background-color: #1b98e050!important;
   height: 20px !important;
   padding: 1em;
-  border:#21dbae 1px solid !important;
-  width: 3rem;
+  border: 1px solid transparent !important;
+  width: 4rem;
   color: grey;
+ 
 }
 .precedingAndNext:enabled{
-  background-color: #21dbae!important;
+  background-color: #1b98e0!important;
   height: 20px !important;
   padding: 1em;
-  border:#21dbae 1px solid !important;
-  width: 3rem;
+  border:#1b98e0 1px solid !important;
+  width: 4rem;
 }
 
 

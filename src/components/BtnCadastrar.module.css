@@ -9,7 +9,7 @@
 }
 .fd button{
   margin: 1em;
-  background-color: #21dbae !important;
+  background-color: #1b98e0!important;
   border: none !important;
   color: #fff;
   width: 15rem;
@@ -24,6 +24,6 @@
   color:#fff;
 }
 .fd button:hover{
-  background-color: rgba(33,219,174, .5)  !important;
+  background-color: #006494 !important;
   border:none !important
 }
