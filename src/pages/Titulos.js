@@ -5,6 +5,8 @@ import style from './Titulos.module.css';
 import Pagination from '../components/Pagination'
 import apiurl from '../services/apiurl';
 import SearchInput from '../components/SearchInput'
+import { useLocation } from 'react-router-dom';
+import Message from '../components/Message';
 import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
 import Loader from '../components/Loader';
@@ -47,8 +49,21 @@ function Titulos() {
       colunas.push(x);
     }
   }
+
+  const location = useLocation();
+  let message = '';
+  let type = '';
+
+  if (location.state) {
+    message = location.state.message;
+    type = location.state.type;
+  }
+
   return (
     <div className={'container-fluid'} >
+      <div>
+        {message && <Message type={type} msg={message}></Message>}
+      </div>
       <BtnCadastrar para={"/novotitulo"} adicionaroque={"Título"} />
       <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
