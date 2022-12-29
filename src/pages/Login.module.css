@@ -112,4 +112,5 @@ input:valid:hover:focus {
 
 .divButton button:hover {
     box-shadow: rgb(180 180 180 / 100%) 0px 0px 15px;
+    background-color: #006494  !important;
 }
