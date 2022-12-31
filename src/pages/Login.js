@@ -15,11 +15,11 @@ function Login() {
           <label for="login">Usuário</label>
         </div>
         <div className={"mb-3 " + style.campo}>
-          <input required type="text" id="password" className="form-control" />
+          <input required type="password" id="password" className="form-control" />
           <div className={style.line}></div>
           <label for="password">Senha</label>
         </div>
-        <div className={style.divButton + ' text-center'}>
+        <div className={'mb-3 text-center '+style.divButton }>
           <button type="button" className="btn btn-primary btn-block col-4"> <IoIosLogIn /> ENTRAR</button>
         </div>
       </form>

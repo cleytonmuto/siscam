@@ -1,30 +1,49 @@
-.fundo {
+ .fundo {
+    padding: 0;
+    margin: 0;
     background-image: url('../images/PGE.jpg');
-    min-height: 89.6vh;
-    min-width: 90vw;
+    height: 90vh;
+    width: 100vw;
     display: flex;
     justify-content: center; /*alinhamento horizontal*/
     align-items: center; /*centraliza na vertical*/
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+} 
+.fundo .cobertura{
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    background-color: #ffffff01;
+    backdrop-filter: blur(3px);
 }
 
 .fundo .backgroundimg {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px);
+    background-color: #fbfbfb;
+ 
     display: flex;
+    align-self: center;
     align-items: center;
     justify-content: center;
     align-content: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    /*Não Mexer*/
-    min-width: 80vw;
-    max-width: 50vw;
-    font-size: 3em;
+    max-width: 500px;
+    font-size: 8vh;
     /* min-width: 5vw;*/
-    border-radius: 25px;
+    border-radius: 15px;
     text-align: center;
     padding: 1em;
-    color: #fff;
-    -webkit-text-stroke: 0.2px #000; /*borda do texto interno ao item*/
+    color: #1b98E0;
+   -webkit-text-stroke: 0.2px #000;/* borda do texto interno ao item*/
 }
+@media only screen and (max-width:480px) {
+    .fundo .backgroundimg{
+     width: 90%;
+    
+    }
+   
+     
+   }
