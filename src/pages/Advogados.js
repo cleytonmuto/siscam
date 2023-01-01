@@ -88,7 +88,7 @@ function Advogados() {
 
         {dadosAdvogados.length > 0 ? (
           <div className="table-responsive">
-            <table className="table table-striped table-hover">
+            <table className="table table-hover">
               <thead>
                 <tr>
                   {colunas.map((colunas, i) => {

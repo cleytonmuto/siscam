@@ -19,7 +19,7 @@ import {GoLaw} from 'react-icons/go';
 import {FaFileContract} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaSignInAlt,FaHome} from 'react-icons/fa';
-
+// https://www.iconfinder.com/iconsets/basic-user-interface-elements - site de ícones
 function Navbar() { 
   return ( 
     <nav className={"navbar navbar-expand-lg "} >

@@ -15,6 +15,9 @@ td div a {
     margin: -15px;
     padding: -15px;
 }
+th{
+    color:#1b98e0 !important;
+}
 
 .fd button {
     margin: 1em;
