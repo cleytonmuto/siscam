@@ -1,6 +1,8 @@
 .campopesq {
   max-width: 40vw;
   padding-bottom: 0.5em;
+ 
+
 }
 @media only screen and (max-width:500px) {
   .campopesq{
@@ -10,11 +12,12 @@
   
 }
 
-.campopesq input {
-  box-shadow: 0 0 0 0 !important;
+.campopesq input{
+  /* box-shadow: 0 0 0 0 !important; */
   border: 0 none !important;
   color: #1b98E0 !important;
   border-radius: 25em;
+  box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px !important;
 
 }
 
@@ -27,6 +30,17 @@
 .campopesq button {
   border-radius: 25em;
   width: 5em;
+  box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px;
+}
+.campopesq button svg{
+  font-size: 1.4em;
+  
+}
+.campopesq input{
+ border-right: none;
+}
+.campopesq button{
+  border-left: none;
 }
 
 .buscaadv {

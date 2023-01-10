@@ -23,7 +23,7 @@ import {FaSignInAlt,FaHome} from 'react-icons/fa';
 function Navbar() { 
   return ( 
     <nav className={"navbar navbar-expand-lg "} >
-    <div className="container fluid">
+    <div className={"container fluid "+style.navprin}>
    
       <Link className='navbar-brand' to='/'><span className={style.brand_sis}><img alt="Logo" src={logo_pge}/> SISCAM</span></Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

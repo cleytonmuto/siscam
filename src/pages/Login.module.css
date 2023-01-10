@@ -22,7 +22,7 @@
 }
 
 .div_form h1 {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     padding: 0px;
     font-weight: 900;
 }
@@ -92,7 +92,7 @@ input:valid:hover:focus {
     bottom: 10px;
     left: 0;
     color: grey;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: .3s;
 }
 
@@ -111,7 +111,7 @@ input:valid:hover:focus {
     background-color: #1b98E0 !important;
     color: #fbfbfb;
     border: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     font-size: 1rem !important;
 }
