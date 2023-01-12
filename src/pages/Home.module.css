@@ -1,7 +1,7 @@
  .fundo {
     padding: 0;
     margin: 0;
-    background-image: url('../images/PGE.jpg');
+    /* background-image: url('../images/PGE.jpg'); */
     height: 90vh;
     width: 100vw;
     display: flex;
@@ -30,14 +30,15 @@
     justify-content: center;
     align-content: center;
     font-family: 'Montserrat', sans-serif;    /*Não Mexer*/
-    max-width: 500px;
+    max-width: 800px;
     font-size: 8vh;
     /* min-width: 5vw;*/
     border-radius: 15px;
     text-align: center;
     padding: 1em;
     color: #1b98E0;
-   -webkit-text-stroke: 0.2px #000;/* borda do texto interno ao item*/
+   /* -webkit-text-stroke: 0.2px #000;  //borda do texto interno ao item*/
+   box-shadow: rgb(180 180 180 / 90%) 0px 0px 15px;
 }
 @media only screen and (max-width:480px) {
     .fundo .backgroundimg{
