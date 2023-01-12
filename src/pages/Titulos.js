@@ -11,6 +11,8 @@ import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
 import Loader from '../components/Loader';
 import ErroBD from '../components/ErroBD';
+import TituloPage from '../components/TituloPage';
+import {GoLaw} from 'react-icons/go';
 const LIMIT = 10;
 
 function Titulos() {
@@ -69,13 +71,14 @@ function Titulos() {
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
 
       <div className={'container-fluid ' + style.div_container}>
+      <TituloPage titulo="TÍTULOS"/>
 
         {(dadosTitulos.length > 0 ?
           (<div className='table-responsive'>
             <table className='table table-hover'>
               <thead>
                 <tr>
-                  {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas.toUpperCase()}</th>) })}
+                  {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas}</th>) })}
                 </tr>
               </thead>
               <tbody>

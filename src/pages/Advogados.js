@@ -15,6 +15,7 @@ import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
 import Loader from '../components/Loader';
 import ErroBD from '../components/ErroBD';
+import TituloPage from '../components/TituloPage';
 const LIMIT = 10;
 
 function Advogados() {
@@ -85,7 +86,7 @@ function Advogados() {
         setPage={setPage}
       />
       <div className={'container-fluid ' + style.div_container}>
-
+      <TituloPage titulo="ADVOGADOS"/>
         {dadosAdvogados.length > 0 ? (
           <div className="table-responsive">
             <table className="table table-hover">
@@ -98,7 +99,7 @@ function Advogados() {
                         className="col-1 text-center"
                         key={i}
                       >
-                        {colunas.toUpperCase()}
+                        {colunas.toLowerCase()}
                       </th>
                     );
                   })}
@@ -107,7 +108,7 @@ function Advogados() {
                     className="col-1 text-center"
                     key={210}
                   >
-                    <strong>AÇÕES</strong>
+                    <strong>ações</strong>
                   </th>
                 </tr>
               </thead>
