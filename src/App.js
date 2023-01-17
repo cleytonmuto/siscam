@@ -7,6 +7,7 @@ import Titulos from './pages/Titulos.js';
 import Login from './pages/Login.js';
 import NovoAdvogado from './pages/NovoAdvogado.js';
 import NovoTitulo from './pages/NovoTitulo.js';
+import Dash from './pages/Dash.js';
 function App() {
   return ( 
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path='/novoadvogado' element={<NovoAdvogado />}/>
         <Route path='/advogado/:id' element={<Advogado />}/>
         <Route path='/novotitulo' element={<NovoTitulo />}/>
+        <Route path='/dash' element={<Dash />}/>
       </Routes>
     </Router>
   );
