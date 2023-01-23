@@ -4,9 +4,9 @@ import { Chart } from 'react-google-charts';
 function Dash(){
   return(<Chart
     chartType='ScatterChart'
-    data={[['Age', 'Weight'], [-4, 5.5], [8, 12]]}
+    data={[['Age', 'Weight'], [-4, 16], [8, 6]]}
     width='100%'
-    height='400px'
+    height='800px'
     legendToggle
   />)
 }
