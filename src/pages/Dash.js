@@ -1,7 +1,7 @@
 import React from 'react'
 import { Chart } from 'react-google-charts';
 
-function Dash(){
+function Dash() {
   return(<Chart
     chartType='ScatterChart'
     data={[['Age', 'Weight'], [-4, 16], [8, 6]]}
