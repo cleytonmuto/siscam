@@ -2,14 +2,13 @@
 import { useNavigate } from 'react-router-dom';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import styles from './NovoAdvogado.module.css';
-import apiurl from '../services/apiurl';
 
 function NovoAdvogado() {
 
   const navigate = useNavigate();
 
   function createPost(advogado) {
-    fetch(`${apiurl()}/api/usuarios/add`, {
+    fetch(`${process.env.REACT_APP_APIURL}/api/usuarios/add`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

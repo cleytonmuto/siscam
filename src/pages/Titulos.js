@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
 import Pagination from '../components/Pagination'
-import apiurl from '../services/apiurl';
 import SearchInput from '../components/SearchInput'
 import { useLocation } from 'react-router-dom';
 import Message from '../components/Message';
@@ -28,7 +27,7 @@ function Titulos() {
   const [removeLoader, setRemoveLoader] = useState(true);
 
   useEffect(() => {
-    axios.post(`${apiurl()}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
+    axios.post(`${process.env.REACT_APP_APIURL}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
       .then((dados) => {
         setDadosTitulos(dados.data.rows);
         setTotalTitulos(dados.data.count);

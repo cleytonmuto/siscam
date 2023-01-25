@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import TituloForm from '../components/titulo/TituloForm';
 import styles from './NovoTitulo.module.css';
-import apiurl from '../services/apiurl';
 
 function NovoTitulo() {
 
   const navigate = useNavigate();
 
   function createPost(titulo) {
-    fetch(`${apiurl()}/api/titulos/add`, {
+    fetch(`${process.env.REACT_APP_APIURL}/api/titulos/add`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

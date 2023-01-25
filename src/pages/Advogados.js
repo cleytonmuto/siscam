@@ -8,7 +8,6 @@ import { VscEye } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Message from '../components/Message';
-import apiurl from '../services/apiurl';
 import SearchInput from '../components/SearchInput';
 import Pagination from '../components/Pagination';
 import BtnCadastrar from '../components/BtnCadastrar';
@@ -32,7 +31,7 @@ function Advogados() {
   useEffect(() => {
     axios
       .post(
-        `${apiurl()}/api/usuarios/search?offset=${offset}&page=${page}&limit=${LIMIT}`,
+        `${process.env.REACT_APP_APIURL}/api/usuarios/search?offset=${offset}&page=${page}&limit=${LIMIT}`,
         { termo: campoPesquisa }
       )
       .then((dados) => {

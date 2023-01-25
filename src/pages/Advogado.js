@@ -1,7 +1,6 @@
 import styles from './Advogado.module.css';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import apiurl from '../services/apiurl';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 
 function Advogado() {
@@ -10,7 +9,7 @@ function Advogado() {
   const [mostraAdvogadoForm, setMostraAdvogadoForm] = useState(false);
 
   useEffect(() => {
-    fetch(`${apiurl()}/api/usuarios/${id}`, {
+    fetch(`${process.env.REACT_APP_APIURL}/api/usuarios/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +23,7 @@ function Advogado() {
   }, [id]);
 
   function editPost(advogado) {
-    fetch(`${apiurl()}/api/usuarios/update`, {
+    fetch(`${process.env.REACT_APP_APIURL}/api/usuarios/update`, {
       id: id,
       method: 'UPDATE',
       headers: {
