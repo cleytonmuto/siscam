@@ -16,7 +16,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/advogados' element={<Advogados />}/>
         <Route path='/titulos' element={<Titulos />}/>
-        <Route path='/sigin' element={<Login />}/>
+        <Route path='/signin' element={<Login />}/>
         <Route path='/novoadvogado' element={<NovoAdvogado />}/>
         <Route path='/advogado/:id' element={<Advogado />}/>
         <Route path='/novotitulo' element={<NovoTitulo />}/>

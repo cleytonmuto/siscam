@@ -41,7 +41,7 @@ function Navbar() {
            <Link className={'nav-link'} to='/titulos'><FaFileContract className={style.contract} /> TÍTULOS</Link>
           </li>
           <li className="nav-item">
-           <Link className={'nav-link'} to='/sigin'><FaSignInAlt/> LOGIN</Link>
+           <Link className={'nav-link'} to='/signin'><FaSignInAlt/> LOGIN</Link>
           </li>
         </ul>
       </div>

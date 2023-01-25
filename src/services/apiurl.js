@@ -1,4 +1,4 @@
 export default function apiurl() {
-  const API_URL = 'http://esap.pge.pa.gov.br:7000';
-  return API_URL;
+  const APIURL = process.env.REACT_APP_APIURL;
+  return APIURL;
 }
