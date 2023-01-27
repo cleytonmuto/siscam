@@ -27,7 +27,8 @@ const Titulos = () => {
   const [removeLoader, setRemoveLoader] = useState(true);
 
   useEffect(() => {
-    axios.post(`${process.env.REACT_APP_APIURL}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
+    axios.post(`${process.env.REACT_APP_APIURL}/api/titulos/search?` +
+      `offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
       .then((dados) => {
         setDadosTitulos(dados.data.rows);
         setTotalTitulos(dados.data.count);
@@ -41,10 +42,9 @@ const Titulos = () => {
         setRemoveLoader(false);
         setSemCorrespondenciaState(false);
       });
-  }, [campoPesquisa, offset, page])
+  }, [campoPesquisa, offset, page]);
 
-  let colunas = [];
-
+  const colunas = [];
   if (dadosTitulos !== []) {
     for (const x in dadosTitulos[0]) {
       colunas.push(x);
@@ -73,11 +73,11 @@ const Titulos = () => {
       <TituloPage titulo='TÍTULOS'/>
 
         {(dadosTitulos.length > 0 ?
-          (<div className='table-responsive'>
-            <table className='table table-hover'>
+          (<div className="table-responsive">
+            <table className="table table-hover">
               <thead>
                 <tr>
-                  {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas}</th>) })}
+                  {colunas.map((colunas, i) => { return (<th scope="row" className="col-1 text-center" key={i}>{colunas}</th>) })}
                 </tr>
               </thead>
               <tbody>
