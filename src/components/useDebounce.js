@@ -1,12 +1,16 @@
-import { useRef } from "react";
-export default function useDebounce(funcao, delay){
-const timeoutRef = useRef(null)
-function debouncedFn(...args){
-  window.clearTimeout(timeoutRef.current);
- timeoutRef.current=  window.setTimeout(()=>{funcao(...args);},delay);
-  
+import {useRef} from 'react';
+
+const useDebounce = (action, delay) => {
+  const timeoutRef = useRef(null);
+
+  const debouncedFn = (...args) => {
+    window.clearTimeout(timeoutRef.current);
+    timeoutRef.current = window.setTimeout(() => {
+      action(...args);
+    }, delay);
+  }
+
+  return debouncedFn;
 }
 
-return debouncedFn
-
-}
+export default useDebounce;

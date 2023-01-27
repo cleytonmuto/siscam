@@ -1,20 +1,20 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Titulos.module.css';
+import BtnCadastrar from '../components/BtnCadastrar';
+import ErroBD from '../components/ErroBD';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 import Pagination from '../components/Pagination'
 import SearchInput from '../components/SearchInput'
-import { useLocation } from 'react-router-dom';
-import Message from '../components/Message';
-import BtnCadastrar from '../components/BtnCadastrar';
 import SemCorrespondencia from '../components/SemCorrespondencia';
-import Loader from '../components/Loader';
-import ErroBD from '../components/ErroBD';
 import TituloPage from '../components/TituloPage';
-import {GoLaw} from 'react-icons/go';
+
 const LIMIT = 10;
 
-function Titulos() {
+const Titulos = () => {
 
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(0);
@@ -36,7 +36,7 @@ function Titulos() {
         setSemCorrespondenciaState(true)
       })
       .catch((erro) => {
-        console.log("não foi possível recuperar os dados da rota digitada")
+        console.log('não foi possível recuperar os dados da rota digitada')
         setErroBD(true);
         setRemoveLoader(false);
         setSemCorrespondenciaState(false);
@@ -65,12 +65,12 @@ function Titulos() {
       <div>
         {message && <Message type={type} msg={message}></Message>}
       </div>
-      <BtnCadastrar para={"/novotitulo"} adicionaroque={"Título"} />
+      <BtnCadastrar dest={'/novotitulo'} entity={'Título'} />
       <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
 
       <div className={'container-fluid ' + style.div_container}>
-      <TituloPage titulo="TÍTULOS"/>
+      <TituloPage titulo='TÍTULOS'/>
 
         {(dadosTitulos.length > 0 ?
           (<div className='table-responsive'>
@@ -87,24 +87,24 @@ function Titulos() {
                       if (i % 6 === 0 && i > 1) {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
+                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + '...' : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       if (i % 7 === 0 && i > 1) {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
+                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + '...' : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       if (i % 8 === 0 && i > 1) {
                         return (
                           <td className={style.tdin + ' text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
+                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + '...' : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       return (
                         <td className={style.tdin + ' text-center col-1'}>
-                          {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
+                          {elemento[col].length > 40 ? elemento[col].substring(0, 40) + '...' : elemento[col]}
                         </td>);
                     })}
                   </tr>)
