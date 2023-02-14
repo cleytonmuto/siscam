@@ -1,20 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Navbar.module.css';
-// import {FaHandsHelping} from 'react-icons/fa';
-// import {VscLaw,VscHome} from 'react-icons/vsc';
-// import Logo from './Logo.svg';
-// import Logo_titulos from './Logo_titulos.svg';
-// import Logo_advogados from './Logo_advogados.svg';
-// import Logo_home from './Logo_home.svg';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FcHome } from 'react-icons/fc';
 import logo_pge from '../images/logo-pge.png'
-//import { FcBinoculars } from 'react-icons/fc'; 
-import { FcBusinessman } from 'react-icons/fc'; 
-import { FcSearch } from "react-icons/fc";
-import {FcInternal} from "react-icons/fc";
-import {IoIosPeople} from 'react-icons/io';
 import {GoLaw} from 'react-icons/go';
 import {FaFileContract} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
