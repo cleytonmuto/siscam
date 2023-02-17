@@ -2,11 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import TituloForm from '../components/titulo/TituloForm';
 import styles from './NovoTitulo.module.css';
 
-function NovoTitulo() {
+const NovoTitulo = () => {
 
   const navigate = useNavigate();
 
-  function createPost(titulo) {
+  const createPost = (titulo) => {
     fetch(`${process.env.REACT_APP_APIURL}/api/titulos/add`, {
       method: 'POST',
       headers: {

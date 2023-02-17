@@ -1,8 +1,9 @@
-td,tr{
+td, tr {
     vertical-align: middle;
     color:#333 !important;
 }
-th{
+
+th {
     color:black;
     font-size: 1.1em !important;
     font-weight: 900;

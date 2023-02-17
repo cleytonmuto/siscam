@@ -1,13 +1,3 @@
-/* .ah{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-} */
-/* *{
-    border: 1px solid black;
-} */
-
 .div_form {
     border-radius: 15px;
     margin-top: 6em;
@@ -84,7 +74,6 @@ input:valid:hover:focus {
     /* box-shadow: 0 0 .1em 0.1px #1b98E0 !important;
   border-bottom: 2px solid transparent; */
     box-shadow: rgb(180 180 180 / 80%) 0px 0px 15px;
-
 }
 
 .campo label {
@@ -101,9 +90,7 @@ input:valid:hover:focus {
 }
 
 .divButton {
-  
     justify-content: 'center';
-    
 }
 
 .divButton button {
@@ -118,13 +105,11 @@ input:valid:hover:focus {
 
 .divButton button:hover {
     box-shadow: rgb(180 180 180 / 100%) 0px 0px 15px;
-    background-color: #006494  !important;
+    background-color: #006494 !important;
 }
 
 @media only screen and (max-width:480px) {
-   .div_form{
-    width: 90%;
-   }
-  
-    
-  }
+    .div_form {
+        width: 90%;
+    }
+}

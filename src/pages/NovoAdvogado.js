@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import styles from './NovoAdvogado.module.css';
 
-function NovoAdvogado() {
+const NovoAdvogado = () => {
 
   const navigate = useNavigate();
 
-  function createPost(advogado) {
+  const createPost = (advogado) => {
     fetch(`${process.env.REACT_APP_APIURL}/api/usuarios/add`, {
       method: 'POST',
       headers: {

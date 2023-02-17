@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Input from '../form/Input';
 import SubmitButton from '../form/SubmitButton';
 import styles from './AdvogadoForm.module.css';
 
-function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
+const AdvogadoForm = ({handleSubmit, btnText, advogadoData}) => {
 
   const [advogado, setAdvogado] = useState(advogadoData || []);
 
@@ -12,8 +12,8 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
     handleSubmit(advogado);
   }
 
-  function handleChange(e) {
-    setAdvogado({ ...advogado, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setAdvogado({...advogado, [e.target.name]: e.target.value});
   }
 
   return (
@@ -22,7 +22,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="Nome"
         name="nome"
-        placeholder="Digite o nome do advogado"
+        placeholder="Informe o nome do advogado"
         handleOnChange={handleChange}
         value={advogado.nome}>
       </Input>
@@ -30,7 +30,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="OAB"
         name="oab"
-        placeholder="Digite a OAB do advogado"
+        placeholder="Informe a OAB do advogado"
         handleOnChange={handleChange}
         value={advogado.oab}>
       </Input>
@@ -38,7 +38,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="CPF"
         name="cpf"
-        placeholder="Digite o CPF do advogado"
+        placeholder="Informe o CPF do advogado"
         handleOnChange={handleChange}
         value={advogado.cpf}>
       </Input>
@@ -46,7 +46,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="Telefone"
         name="telefone"
-        placeholder="Digite o telefone do advogado"
+        placeholder="Informe o telefone do advogado"
         handleOnChange={handleChange}
         value={advogado.telefone}>
       </Input>
@@ -54,7 +54,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="E-mail"
         name="email"
-        placeholder="Digite o e-mail do advogado"
+        placeholder="Informe o e-mail do advogado"
         handleOnChange={handleChange}
         value={advogado.email}>
       </Input>
@@ -62,7 +62,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="Endereço"
         name="endereco"
-        placeholder="Digite o endereço do advogado"
+        placeholder="Informe o endereço do advogado"
         handleOnChange={handleChange}
         value={advogado.endereco}>
       </Input>
@@ -70,7 +70,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="text"
         text="Observação"
         name="observacao"
-        placeholder="Digite uma observação"
+        placeholder="Informe uma observação"
         handleOnChange={handleChange}
         value={advogado.observacao}>
       </Input>
@@ -78,7 +78,7 @@ function AdvogadoForm({ handleSubmit, btnText, advogadoData }) {
         type="password"
         text="Senha"
         name="password"
-        placeholder="Digite uma senha"
+        placeholder="Informe uma senha"
         handleOnChange={handleChange}
         value={advogado.password}>
       </Input>

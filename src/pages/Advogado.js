@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 
-function Advogado() {
+const Advogado = () => {
+
   const { id } = useParams();
   const [advogado, setAdvogado] = useState([]);
   const [mostraAdvogadoForm, setMostraAdvogadoForm] = useState(false);
@@ -22,7 +23,7 @@ function Advogado() {
       .catch((err) => console.log(err));
   }, [id]);
 
-  function editPost(advogado) {
+  const editPost = (advogado) => {
     fetch(`${process.env.REACT_APP_APIURL}/api/usuarios/update`, {
       id: id,
       method: 'UPDATE',
@@ -39,7 +40,7 @@ function Advogado() {
       .catch((err) => console.log(err));
   }
 
-  function toggleProjectForm() {
+  const toggleProjectForm = () => {
     setMostraAdvogadoForm(!mostraAdvogadoForm);
   }
 
@@ -48,27 +49,13 @@ function Advogado() {
       <h1>{advogado.nome}</h1>
       {!mostraAdvogadoForm ? (
         <div className={styles.advogado_info}>
-          <p>
-            <span>OAB:</span> {advogado.oab}
-          </p>
-          <p>
-            <span>CPF:</span> {advogado.cpf}
-          </p>
-          <p>
-            <span>Telefone:</span> {advogado.telefone}
-          </p>
-          <p>
-            <span>E-mail:</span> {advogado.email}
-          </p>
-          <p>
-            <span>Endereco:</span> {advogado.endereco}
-          </p>
-          <p>
-            <span>Observação:</span> {advogado.observacao}
-          </p>
-          <p>
-            <span>Senha:</span> {advogado.password}
-          </p>
+          <p><span>OAB:</span> {advogado.oab}</p>
+          <p><span>CPF:</span> {advogado.cpf}</p>
+          <p><span>Telefone:</span> {advogado.telefone}</p>
+          <p><span>E-mail:</span> {advogado.email}</p>
+          <p><span>Endereco:</span> {advogado.endereco}</p>
+          <p><span>Observação:</span> {advogado.observacao}</p>
+          <p><span>Senha:</span> {advogado.password}</p>
         </div>
       ) : (
         <div className={styles.advogado_info}>

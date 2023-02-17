@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.js';
 import Navbar from './components/Navbar.js';
 import Advogado from './pages/Advogado.js';
@@ -8,7 +8,8 @@ import Login from './pages/Login.js';
 import NovoAdvogado from './pages/NovoAdvogado.js';
 import NovoTitulo from './pages/NovoTitulo.js';
 import Dash from './pages/Dash.js';
-function App() {
+
+const App = () => {
   return ( 
     <Router>
       <Navbar />
