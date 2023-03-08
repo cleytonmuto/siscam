@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&family=Roboto+Serif:opsz@8..144&display=swap');
+.NavLogo{
+    
+    img{
+        height: 3em;
+        
+    }
+    .textSISCAM{
+        margin-left: 1em;
+        font-weight: bold;
+        font-size: 1.3em;
+        font-family: 'Roboto serif';
+        color: #0084d1;
+    }
+}
+
+.me-auto{
+    margin-left: 9%;
+    a{
+        font-size: 1.1em;
+        font-family: 'Roboto serif';
+        font-weight: 600;
+    }
+    a:hover{
+        background-color: #0084d1;
+        border-radius: 5px;
+        color: white;
+    }
+}

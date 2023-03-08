@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.js';
-import Navbar from './components/Navbar.js';
+import NavigationBar from './components/Navbar/NavigationBar.js';
+import Navbar from './components/Navbar';
 import Advogado from './pages/Advogado.js';
 import Advogados from './pages/Advogados.js';
 import Titulos from './pages/Titulos.js';
@@ -12,7 +13,7 @@ import Dash from './pages/Dash.js';
 const App = () => {
   return ( 
     <Router>
-      <Navbar />
+      <NavigationBar />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/advogados' element={<Advogados />}/>
