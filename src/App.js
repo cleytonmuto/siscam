@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.js';
-import NavigationBar from './components/Navbar/NavigationBar.js';
-import Navbar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import Home from './components/home/Home';
+import NavigationBar from './components/navbar/NavigationBar.js';
 import Advogado from './pages/Advogado.js';
 import Advogados from './pages/Advogados.js';
 import Titulos from './pages/Titulos.js';
