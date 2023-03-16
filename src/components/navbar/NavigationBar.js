@@ -18,7 +18,7 @@ const NavigationBar = () =>{
         <>
         <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand className="NavLogo" as={Link} to="/" ><img src={LogoPGE}/><span className="textSISCAM my-2">SISCAM</span></Navbar.Brand>
+          <Navbar.Brand className="NavLogo" as={Link} to="/" ><img src={LogoPGE} alt="" /><span className="textSISCAM my-2">SISCAM</span></Navbar.Brand>
           <Nav className="navlinks">
             <Nav.Link className="mx-2" as={Link} to="/"><FaHome /> Inicio</Nav.Link>
             <Nav.Link className="mx-2" as={Link} to="/advogados"><GoLaw/> Advogados</Nav.Link>
