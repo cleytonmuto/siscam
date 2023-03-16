@@ -24,6 +24,7 @@ const NavigationBar = () =>{
             <Nav.Link className="mx-2" as={Link} to="/advogados"><GoLaw/> Advogados</Nav.Link>
             <Nav.Link className="mx-2" as={Link} to="/titulos"><FaFileContract/> Títulos</Nav.Link>
             <Nav.Link className="mx-2" as={Link} to="/signin"><FaSignInAlt/> Login</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="https://bit.ly/3n1T7lO"> Sugestões</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
