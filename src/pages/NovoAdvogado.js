@@ -33,7 +33,7 @@ const NovoAdvogado = () => {
 
   return (
     <div className={styles.novoadvogado_container}>
-      <h1>Cadastro de Advogados</h1>
+      <h1 className='text-center'>Cadastro de Advogados</h1>
       <AdvogadoForm handleSubmit={createPost} btnText="Cadastrar Advogado"></AdvogadoForm>
     </div>
   );
