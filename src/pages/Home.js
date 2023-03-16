@@ -1,12 +1,13 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Home.module.css';
+
+import './Home.scss'
 
 const Home = () => {
   return (
-    <div className={'container-fluid '.concat(style.fundo)}>
-      <div className={'container-fluid '.concat(style.cobertura)}>
-        <div className={'container-fluid '.concat(style.background_img)}>
+    <div className=' fundo'>
+      <div className='container-fluid cobertura'>
+        <div className='container-fluid background_img'>
           <p>Bem-vindo(a) ao<br /> SISCAM-PGE/PA</p>
         </div>
       </div>

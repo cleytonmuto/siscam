@@ -1,0 +1,29 @@
+    .cobertura {
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        background-color: #ffffff01;
+        backdrop-filter: blur(3px);
+
+        .background_img {
+            background-color: #fbfbfb;
+            display: flex;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            font-family: 'Montserrat', sans-serif;
+            /*Não Mexer*/
+            max-width: 800px;
+            font-size: 8vh;
+            /* min-width: 5vw;*/
+            border-radius: 15px;
+            text-align: center;
+            padding: 1em;
+            color: #1b98E0;
+            /* -webkit-text-stroke: 0.2px #000;  //borda do texto interno ao item*/
+            box-shadow: rgba(180,180, 180, 90%) 0px 0px 15px;
+        }
+    }
