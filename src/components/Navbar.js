@@ -31,6 +31,9 @@ function Navbar() {
           <li className="nav-item">
            <Link className={'nav-link'} to='/signin'><FaSignInAlt/> LOGIN</Link>
           </li>
+          <li className="nav-item">
+           <Link className={'nav-link'} to='https://bit.ly/3n1T7lO' rel='noopener noreferrer'>SUGESTÕES</Link>
+          </li>
         </ul>
       </div>
     </div>
