@@ -18,13 +18,13 @@ const NavigationBar = () =>{
         <>
         <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand className="NavLogo" as={Link} to="/" ><img src={LogoPGE} alt="" /><span className="textSISCAM my-2">SISCAM</span></Navbar.Brand>
+          <Navbar.Brand className="NavLogo" as={Link} to="/" ><img src={LogoPGE} alt="" /><span className="textSISCAM">SISCAM</span></Navbar.Brand>
           <Nav className="navlinks">
-            <Nav.Link className="mx-2" as={Link} to="/"><FaHome /> Inicio</Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="/advogados"><GoLaw/> Advogados</Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="/titulos"><FaFileContract/> Títulos</Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="/signin"><FaSignInAlt/> Login</Nav.Link>
-            <Nav.Link className="mx-2" as={Link} to="https://bit.ly/3n1T7lO"> Sugestões</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/"><FaHome className="iconNav" /> Inicio</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/advogados"><GoLaw className="iconNav"/> Advogados</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/titulos"><FaFileContract className="iconNav"/> Títulos</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="/signin"><FaSignInAlt className="iconNav"/> Login</Nav.Link>
+            <Nav.Link className="mx-2" as={Link} to="https://bit.ly/3n1T7lO" target="_blank"> Sugestões</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

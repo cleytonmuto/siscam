@@ -1,29 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&family=Roboto+Serif:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .NavLogo{
     position: absolute;
-    
+    padding: 1em;
     img{
         height: 3em;
-        
+        border-right: 2px solid black;
     }
     .textSISCAM{
         margin-left: 1em;
-        font-weight: bold;
         font-size: 1.3em;
-        font-family: 'Roboto serif';
-        color: #0084d1;
-    }
+        font-family:'Pacifico';
+        font-style: italic;
+        color: #0084d1;  
+        vertical-align: sub;
+    }   
 }
 
 .navlinks{
     position: relative;
-    height: 5em;
+    height: 4em;
     align-items: center;
     width: 100%;
     justify-content: center;
     a{
         font-size: 1.1em;
-        font-family: 'Roboto serif';
+        font-family: 'Roboto';
         font-weight: 600;
     }
     a:hover{
