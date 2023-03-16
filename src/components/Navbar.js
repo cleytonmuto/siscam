@@ -1,11 +1,9 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import style from './Navbar.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo_pge from '../images/logo-pge.png'
 import {GoLaw} from 'react-icons/go';
 import {FaFileContract} from 'react-icons/fa';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {FaSignInAlt,FaHome} from 'react-icons/fa';
 // https://www.iconfinder.com/iconsets/basic-user-interface-elements - site de ícones
 function Navbar() { 
