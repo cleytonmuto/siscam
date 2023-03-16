@@ -1,10 +1,11 @@
 import { RxPlus } from 'react-icons/rx';
-import styles from './SubmitButton.module.css';
+import Button from 'react-bootstrap/Button';
+import './SubmitButton.scss';
 
 function SubmitButton({text}) {
   return (
     <div>
-      <button className={styles.btn}><RxPlus></RxPlus>{text}</button>
+      <Button className='btnSubmit'><RxPlus></RxPlus>{text}</Button>
     </div>
   );
 }
