@@ -1,11 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {RxPlus} from 'react-icons/rx';
-import style from './BtnCadastrar.module.css';
+
+import './BtnCadastrar.scss';
 
 const BtnCadastrar = ({dest, entity}) => {
   return (
-    <div className={style.fd}>
+    <div className='fd'>
       <Link to={dest}>
         <button type="button" class="btn btn-primary"><RxPlus />
           Cadastrar {entity}

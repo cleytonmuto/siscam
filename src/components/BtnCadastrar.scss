@@ -1,0 +1,34 @@
+.fd{
+    margin: 1em;
+    height: 20px;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items:center;
+
+    button{
+        margin-top: 5.8em;
+        background-color: #1b98e0!important;
+        border: none !important;
+        color: #fff;
+        width: 15rem;
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items:center;
+        height: 38px;
+
+        svg {
+            font-size: 1.5em !important;
+            color:#fff;
+          }
+      }
+      
+      button:hover{
+        background-color: #006494 !important;
+        border:none !important
+      }
+  }
+
+  

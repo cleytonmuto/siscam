@@ -21,7 +21,7 @@ const Home = () => {
             <Container className="cardHome">
                 <Row>
                     <Col>
-                        <Card as={Link} to="/advogados" style={{ width: '18rem' }}>
+                        <Card className="cardLink" as={Link} to="/advogados" >
                             <Card.Img src={LogoADV} />
                             <Card.Body className="cardbody">
                                 <Button as={Link} to="/advogados" className="btn my-4" variant="info">Advogados</Button>
@@ -30,7 +30,7 @@ const Home = () => {
                     </Col>
 
                     <Col>
-                        <Card as={Link} to="/titulos" style={{ width: '18rem' }}>
+                        <Card className="cardLink" as={Link} to="/titulos" >
                             <Card.Img src={LogoTIT} />
                             <Card.Body>
                                 <Button as={Link} to="/titulos" className="btn my-4" variant="info">Títulos</Button>
@@ -39,7 +39,7 @@ const Home = () => {
                     </Col>
 
                     <Col>
-                        <Card as={Link} to="/signin" style={{ width: '18rem' }}>
+                        <Card className="cardLink" as={Link} to="/signin" >
                             <Card.Img src={LogoLogin} />
                             <Card.Body>
                                 <Button as={Link} to="/signin" className="btn my-4" variant="info">Login</Button>
