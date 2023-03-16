@@ -11,6 +11,8 @@ import Login from './pages/Login.js';
 import NovoAdvogado from './pages/NovoAdvogado.js';
 import NovoTitulo from './pages/NovoTitulo.js';
 import Dash from './pages/Dash.js';
+import CadastroAdvogado from './components/CadastroAdvogado/CadastroAdvogado';
+
 
 const App = () => {
   return ( 
@@ -25,6 +27,7 @@ const App = () => {
         <Route path='/advogado/:id' element={<Advogado />}/>
         <Route path='/novotitulo' element={<NovoTitulo />}/>
         <Route path='/dash' element={<Dash />}/>
+        <Route path='/CadastroAdvogado' element={<CadastroAdvogado />}/>
       </Routes>
     </Router>
   );
