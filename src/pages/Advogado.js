@@ -1,7 +1,7 @@
-import styles from './Advogado.module.css';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
+import './Advogado.scss';
 
 const Advogado = () => {
 
@@ -45,10 +45,10 @@ const Advogado = () => {
   }
 
   return (
-    <div className={styles.advogado_details}>
+    <div className='advogado_details'>
       <h1>{advogado.nome}</h1>
       {!mostraAdvogadoForm ? (
-        <div className={styles.advogado_info}>
+        <div className='advogado_info'>
           <p><span>OAB:</span> {advogado.oab}</p>
           <p><span>CPF:</span> {advogado.cpf}</p>
           <p><span>Telefone:</span> {advogado.telefone}</p>
@@ -58,7 +58,7 @@ const Advogado = () => {
           <p><span>Senha:</span> {advogado.password}</p>
         </div>
       ) : (
-        <div className={styles.advogado_info}>
+        <div className='advogado_info'>
           <AdvogadoForm
             handleSubmit={editPost}
             btnText="Concluir edição"
