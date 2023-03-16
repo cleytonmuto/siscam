@@ -5,7 +5,7 @@ import './SubmitButton.scss';
 function SubmitButton({text}) {
   return (
     <div>
-      <Button className='btnSubmit'><RxPlus></RxPlus>{text}</Button>
+      <Button className='btnSubmit'><RxPlus className='iconAdd'></RxPlus>{text}</Button>
     </div>
   );
 }
