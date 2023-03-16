@@ -5,12 +5,8 @@ import './Home.scss'
 
 const Home = () => {
   return (
-    <div className=' fundo'>
-      <div className='container-fluid cobertura'>
-        <div className='container-fluid background_img'>
-          <p>Bem-vindo(a) ao<br /> SISCAM-PGE/PA</p>
-        </div>
-      </div>
+    <div className='container textHome'>
+      <h1>Bem-vindo (a) ao  <span className='text-SISCAM'>SISCAM-PGE/PA</span></h1>
     </div>
   );
 }

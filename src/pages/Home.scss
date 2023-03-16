@@ -1,29 +1,14 @@
-    .cobertura {
-        margin: 0;
-        padding: 0;
-        height: 90vh;
-        width: 100vw;
-        display: flex;
-        background-color: #ffffff01;
-        backdrop-filter: blur(3px);
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&family=Roboto+Serif:opsz@8..144&display=swap');
 
-        .background_img {
-            background-color: #fbfbfb;
-            display: flex;
-            align-self: center;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-            font-family: 'Montserrat', sans-serif;
-            /*Não Mexer*/
-            max-width: 800px;
-            font-size: 8vh;
-            /* min-width: 5vw;*/
-            border-radius: 15px;
-            text-align: center;
-            padding: 1em;
-            color: #0084d2;
-            /* -webkit-text-stroke: 0.2px #000;  //borda do texto interno ao item*/
-            box-shadow: rgba(180,180, 180, 90%) 0px 0px 15px;
+.textHome{
+    text-align: center;
+
+    h1{
+        font-family: 'Roboto Serif';
+        font-weight: 700;
+        margin-top: 7.5em;
+        .text-SISCAM{
+            color: #0084d1;
         }
     }
+}
