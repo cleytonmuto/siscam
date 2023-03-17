@@ -1,6 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .card-advogado{
     width: 30%;
     background: none;
     border: none;
+
+    .form-control{
+        border-radius: 0%;
+        padding: 0.9em;
+    }
     
+    h1{
+        font-weight: 500;
+        font-family: 'Roboto';
+    }
+
+    .h5{
+        font-family: 'Roboto';
+        font-size: 1em;
+    }
+
+    
+
+    .btns{
+
+        margin-bottom: 3em;
+        margin-top: 2em;
+
+        .btnSubmit {
+            background-color: #1b98e0;
+            padding: 1em;
+            
+        }
+    
+        .btnSubmit:hover{
+            background-color: #037cc2;
+        }
+    
+        
+    }
 }

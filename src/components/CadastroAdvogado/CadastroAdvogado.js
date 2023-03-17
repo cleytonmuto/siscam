@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Row, Col } from 'react-bootstrap';
@@ -12,20 +11,20 @@ import './CadastroAdvogado.scss';
 const CadastroAdvogado = (props) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .required('Informe o nome do advogado'),
+      .required('Informe o nome completo do advogado')
+      .min(5,'Informe o nome completo do advogado'),
     email: Yup.string()
       .required('Informe o email do advogado')
       .email('O email deve conter "@" e ponto "."'),
     phone: Yup.string()
-      .required('Informe o telefone do advogado')
-      .min(8,'O número de telefone deve conter pelo menos 8 digitos'),
+      .required('Informe o telefone do advogado com ddd do estado')
+      .length(11,'O número de telefone deve conter 11 digitos'),
     cpf: Yup.string()
       .required('Informe a CPF do advogado')
       .length(11,'CPF deve conter 11 dígitos'),
     inscription: Yup.string()
       .required('Informe a OAB do advogado')
-      .min(6, 'O número de matrícula deve conter no mínimo 6 caracteres')
-      .max(8, 'O número de matrícula deve conter no máximo 8 caracteres'),
+      .length(8, 'O nº da OAB deve estar no formato UF999999 (duas letras para UF e seis dígitos para número).'),
     department: Yup.string()
       .required('Informe o endereço do advogado'),
     password: Yup.string()
@@ -60,58 +59,63 @@ const CadastroAdvogado = (props) => {
       >
         {() => (
         <Form className="container card card-advogado my-3">
-          <h2 className='text-center p-4'>Cadastrar Advogado</h2>
+          <h1 className='text-center p-4'>Cadastro de Advogados</h1>
           <FormGroup>
             <FormLabel className="h5 my-2 ">Nome:</FormLabel> 
-            <Field name="name" type="text" size="lg" className="form-control shadow h4 mx-0 mb-2" />
+            <Field placeholder='Informe o nome do advogado' name="name" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="name" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">Email:</FormLabel>
-            <Field name="email" type="email" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <FormLabel className="h5 my-2">E-mail:</FormLabel>
+            <Field placeholder='Informe o email do advogado' name="email" type="email" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="email" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">CPF:</FormLabel>
-            <Field name="cpf" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o CPF do advogado' name="cpf" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="cpf" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">OAB:</FormLabel>
-            <Field name="inscription" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe a OAB do advogado' name="inscription" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="inscription" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Telefone:</FormLabel>
-            <Field name="phone" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o telefone do advogado' name="phone" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="phone" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Endereço:</FormLabel>
-            <Field name="department" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
-            <ErrorMessage name="department" component="div" className="text-danger" />
+            <Field placeholder='Informe o endereço do advogado' name="address" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <ErrorMessage name="address" component="div" className="text-danger" />
+          </FormGroup>
+          <FormGroup>
+            <FormLabel className="h5 my-2">Observação:</FormLabel>
+            <Field placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <ErrorMessage name="observation" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Criar senha:</FormLabel>
-            <Field name="password" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Digite uma senha' name="password" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="password" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Confirmação de senha:</FormLabel>
-            <Field name="confirmPassword" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Repita a senha digitada' name="confirmPassword" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="confirmPassword" component="div" className="text-danger" />
           </FormGroup>
-          <Row className="mt-4 mx-0">
+          <Row className="btns mx-0">
             <Col>
               <FormGroup className="text-center">
-                <Button type="submit" className="btn btn-primary rounded-pill shadow-lg px-4 py-3">
+                <Button type="submit" className="btnSubmit shadow-lg">
                   <BsCheckLg /><span className="mx-2">Cadastrar</span>
                 </Button>
               </FormGroup>
             </Col>
             <Col>  
               <FormGroup className="text-center">
-                <Button type="button" onClick={() => navigate(-1)} className="btn btn-danger rounded-pill shadow-lg px-4 py-3">
+                <Button type="button" onClick={() => navigate(-1)} className="btnCancel btn-danger shadow-lg">
                   <BsXLg /><span className="mx-2">CANCELAR</span>
                 </Button>
               </FormGroup>
