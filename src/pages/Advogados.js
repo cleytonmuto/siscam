@@ -71,7 +71,7 @@ function Advogados() {
       <div>
         {message && <Message type={type} msg={message}></Message>}
       </div>
-      <BtnCadastrar dest={'/novoadvogado'} entity={'Advogado'} />
+      <BtnCadastrar dest={'/cadastroAdvogado'} entity={'Advogado'} />
       <SearchInput
         value={campoPesquisa}
         onChange={(search) => setCampoPesquisa(search)}

@@ -92,7 +92,7 @@ const CadastroAdvogado = (props) => {
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Observação:</FormLabel>
-            <Field placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field as="textarea" placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
             <ErrorMessage name="observation" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
