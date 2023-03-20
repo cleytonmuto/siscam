@@ -16,27 +16,25 @@ const CadastroTitulo = (props) => {
     numero: Yup.string()
       .required('Informe o número do título')
       .length(20,'O número do título deve estar no formato xxxxxxx-xx.xxxx.x.xx.xxxx'),
-    phone: Yup.string()
-      .required('Informe o telefone do advogado com ddd do estado')
-      .length(11,'O número de telefone deve conter 11 digitos'),
-    cpf: Yup.string()
-      .required('Informe a CPF do advogado')
-      .length(11,'CPF deve conter 11 dígitos'),
-    inscription: Yup.string()
-      .required('Informe a OAB do advogado')
-      .length(8, 'O nº da OAB deve estar no formato UF999999 (duas letras para UF e seis dígitos para número).'),
-    department: Yup.string()
-      .required('Informe o endereço do advogado'),
-    password: Yup.string()
-      .required('Defina uma senha')
-      .min(6, 'A senha deve conter no mínimo 6 caracteres')
-      .max(20, 'A senha deve conter no máximo 20 caracteres'),
-    confirmPassword: Yup.string()
-      .required('Confirmação de senha necessária')
-      .oneOf(
-        [Yup.ref('password'), null],
-        'A senha de confirmação é diferente da original.'
-      ),
+    assistido: Yup.string()
+      .required('Informe o nome do assistido')
+      .min(5,'Informe o nome completo'),
+    assistido: Yup.string()
+      .required('Informe o nome do assistido')
+      .min(5,'Informe o nome completo do assistido'),
+    acesso: Yup.string()
+      .required('Informe o acesso')
+      .min(5, 'Informe o acesso'),
+    arbitrado: Yup.string()
+      .required('Informe o arbitrado'),
+    pleiteado: Yup.string()
+      .required('Informe o valor pleiteado'),
+    acordado: Yup.string()
+      .required('Informe o valor acordado'),
+    judicial: Yup.string()
+      .required('Informe o valor judicial'),
+    situacao: Yup.string()
+      .required('Informe a situação'),
   });
 
   const navigate = useNavigate();
@@ -47,12 +45,12 @@ const CadastroTitulo = (props) => {
   const initialValues = {
     name: '',
     numero: '',
-    cpf: '',
-    inscription: '',
-    department: '',
-    phone:'',
-    password: '',
-    confirmPassword: ''
+    assistido: '',
+    arbitrado: '',
+    pleiteado: '',
+    acordado:'',
+    judicial: '',
+    situacao: ''
   };
 
   return (
@@ -72,39 +70,34 @@ const CadastroTitulo = (props) => {
             <ErrorMessage name="numero" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">CPF:</FormLabel>
-            <Field placeholder='Informe o CPF do advogado' name="cpf" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="cpf" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Assistido:</FormLabel>
+            <Field placeholder='Informe o nome do assistido' name="assistido" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="assistido" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">OAB:</FormLabel>
-            <Field placeholder='Informe a OAB do advogado' name="inscription" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="inscription" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Arbitrado:</FormLabel>
+            <Field placeholder='Informe o nome do arbitrado' name="arbitrado" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="arbitrado" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">Telefone:</FormLabel>
-            <Field placeholder='Informe o telefone do advogado' name="phone" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="phone" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Pleiteado:</FormLabel>
+            <Field placeholder='Informe o valor pleiteado' name="pleiteado" type="number" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="pleiteado" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">Endereço:</FormLabel>
-            <Field placeholder='Informe o endereço do advogado' name="address" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="address" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Acordado:</FormLabel>
+            <Field placeholder='Informe o valor acordado' name="acordado" type="number" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="acordado" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">Observação:</FormLabel>
-            <Field as="textarea" placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="observation" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Judicial:</FormLabel>
+            <Field placeholder='Informe o valor judicial'  name="judicial" type="number" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="judicial" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 my-2">Criar senha:</FormLabel>
-            <Field placeholder='Digite uma senha' name="password" type="password" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="password" component="div" className="text-danger" />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel className="h5 my-2">Confirmação de senha:</FormLabel>
-            <Field placeholder='Repita a senha digitada' name="confirmPassword" type="password" size="lg" className="form-control h5 mx-0 mb-2" />
-            <ErrorMessage name="confirmPassword" component="div" className="text-danger" />
+            <FormLabel className="h5 my-2">Situação:</FormLabel>
+            <Field placeholder='Informe a situação'  name="situacao" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
+            <ErrorMessage name="situacao" component="div" className="text-danger" />
           </FormGroup>
           <Row className="btns mx-0">
             <Col>
