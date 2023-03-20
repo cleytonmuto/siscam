@@ -18,9 +18,6 @@ const CadastroTitulo = (props) => {
       .length(20,'O número do título deve estar no formato xxxxxxx-xx.xxxx.x.xx.xxxx'),
     assistido: Yup.string()
       .required('Informe o nome do assistido')
-      .min(5,'Informe o nome completo'),
-    assistido: Yup.string()
-      .required('Informe o nome do assistido')
       .min(5,'Informe o nome completo do assistido'),
     acesso: Yup.string()
       .required('Informe o acesso')
