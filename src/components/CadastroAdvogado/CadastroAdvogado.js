@@ -62,47 +62,47 @@ const CadastroAdvogado = (props) => {
           <h1 className='text-center p-4'>Cadastro de Advogados</h1>
           <FormGroup>
             <FormLabel className="h5 my-2 ">Nome:</FormLabel> 
-            <Field placeholder='Informe o nome do advogado' name="name" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o nome do advogado' name="name" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="name" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">E-mail:</FormLabel>
-            <Field placeholder='Informe o email do advogado' name="email" type="email" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o email do advogado' name="email" type="email" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="email" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">CPF:</FormLabel>
-            <Field placeholder='Informe o CPF do advogado' name="cpf" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o CPF do advogado' name="cpf" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="cpf" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">OAB:</FormLabel>
-            <Field placeholder='Informe a OAB do advogado' name="inscription" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe a OAB do advogado' name="inscription" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="inscription" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Telefone:</FormLabel>
-            <Field placeholder='Informe o telefone do advogado' name="phone" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o telefone do advogado' name="phone" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="phone" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Endereço:</FormLabel>
-            <Field placeholder='Informe o endereço do advogado' name="address" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Informe o endereço do advogado' name="address" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="address" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Observação:</FormLabel>
-            <Field as="textarea" placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field as="textarea" placeholder='Adicione uma observação'  name="observation" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="observation" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Criar senha:</FormLabel>
-            <Field placeholder='Digite uma senha' name="password" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Digite uma senha' name="password" type="password" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="password" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Confirmação de senha:</FormLabel>
-            <Field placeholder='Repita a senha digitada' name="confirmPassword" type="password" size="lg" className="form-control shadow h5 mx-0 mb-2" />
+            <Field placeholder='Repita a senha digitada' name="confirmPassword" type="password" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="confirmPassword" component="div" className="text-danger" />
           </FormGroup>
           <Row className="btns mx-0">
