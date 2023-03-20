@@ -8,7 +8,7 @@ const BtnCadastrar = ({dest, entity}) => {
   return (
     <div className='fd'>
       <Link to={dest}>
-        <button type="button" class="btn btn-primary"><RxPlus />
+        <button type="button" class="btn"><RxPlus />
           Cadastrar {entity}
         </button>
       </Link>
