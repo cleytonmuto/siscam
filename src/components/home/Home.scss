@@ -6,9 +6,19 @@
     h1{
         font-family: 'Roboto Serif';
         font-weight: 700;
-        margin-top: 7.5em;
+        margin-top: 6em;
         .text-SISCAM{
             color: #0084d1;
         }
+    }
+
+    .btn-login{
+        background-color: #0084d1;
+        border: #0084d1;
+
+        
+    }
+    .btn-login:hover{
+        background-color: #015f96;
     }
 }
