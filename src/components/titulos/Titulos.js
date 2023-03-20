@@ -1,16 +1,16 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import style from './Titulos.module.css';
-import Pagination from '../components/Pagination'
-import SearchInput from '../components/SearchInput'
+import './Titulos.scss';
+import Pagination from '../Pagination'
+import SearchInput from '../SearchInput'
 import {useLocation} from 'react-router-dom';
-import Message from '../components/Message';
-import BtnCadastrar from '../components/BtnCadastrar';
-import SemCorrespondencia from '../components/SemCorrespondencia';
-import Loader from '../components/Loader';
-import ErroBD from '../components/ErroBD';
-import TituloPage from '../components/TituloPage';
+import Message from '../Message';
+import BtnCadastrar from '../BtnCadastrar';
+import SemCorrespondencia from '../SemCorrespondencia';
+import Loader from '../Loader';
+import ErroBD from '../ErroBD';
+import TituloPage from '../TituloPage';
+
 const LIMIT = 10;
 
 const Titulos = () => {
@@ -61,11 +61,11 @@ const Titulos = () => {
   return (
     <div className="container-fluid">
       <div>{message && <Message type={type} msg={message}></Message>}</div>
-      <BtnCadastrar para="/novotitulo" adicionaroque="Título" />
+      <BtnCadastrar dest={'/cadastroTitulo'} entity={'Título'}/>
       <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
       <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
 
-      <div className={"container-fluid " + style.div_container}>
+      <div className={'container-fluid div_container'}>
         <TituloPage titulo="TÍTULOS" />
 
         {(dadosTitulos.length > 0 ?
@@ -82,24 +82,24 @@ const Titulos = () => {
                     {colunas.map((col, i) => {
                       if (i % 6 === 0 && i > 1) {
                         return (
-                          <td className={style.tdin + ' text-center col-1'}>
+                          <td className={'tdin text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       if (i % 7 === 0 && i > 1) {
                         return (
-                          <td className={style.tdin + ' text-center col-1'}>
+                          <td className={'tdin text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       if (i % 8 === 0 && i > 1) {
                         return (
-                          <td className={style.tdin + ' text-center col-1'}>
+                          <td className={'tdin text-center col-1'}>
                             {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
                           </td>);
                       }
                       return (
-                        <td className={style.tdin + ' text-center col-1'}>
+                        <td className={'tdin text-center col-1'}>
                           {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
                         </td>);
                     })}

@@ -1,23 +1,24 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import style from './Advogados.module.css';
-import './Advogados.module.css';
 import {FiEdit} from 'react-icons/fi';
 import {VscEye} from 'react-icons/vsc';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-import BtnCadastrar from '../components/BtnCadastrar';
-import ErroBD from '../components/ErroBD';
-import Loader from '../components/Loader';
-import Message from '../components/Message';
-import Pagination from '../components/Pagination';
-import SearchInput from '../components/SearchInput';
-import SemCorrespondencia from '../components/SemCorrespondencia';
-import TituloPage from '../components/TituloPage';
+import BtnCadastrar from '../BtnCadastrar';
+import ErroBD from '../ErroBD';
+import Loader from '../Loader';
+import Message from '../Message';
+import Pagination from '../Pagination';
+import SearchInput from '../SearchInput';
+import SemCorrespondencia from '../SemCorrespondencia';
+import TituloPage from '../TituloPage';
+
+import './Advogados.scss';
+
+
 const LIMIT = 10;
 
-function Advogados() {
+const Advogados = () => {
   const [campoPesquisa, setCampoPesquisa] = useState('');
   const [totalAdvogados, setTotalAdvogados] = useState([]);
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
@@ -67,7 +68,7 @@ function Advogados() {
   }
 
   return (
-    <div className={'container-fluid ' + style.divadvogados}>
+    <div className={'container-fluid divadvogados'}>
       <div>
         {message && <Message type={type} msg={message}></Message>}
       </div>
@@ -83,7 +84,7 @@ function Advogados() {
         setOffset={setOffset}
         setPage={setPage}
       />
-      <div className={'container-fluid ' + style.div_container}>
+      <div className={'container-fluid div_container'}>
         <TituloPage titulo='ADVOGADOS' />
         {dadosAdvogados.length > 0 ? (
           <div className='table-responsive'>
@@ -116,12 +117,8 @@ function Advogados() {
                     <tr>
                       {colunas.map((col, i) => {
                         return (
-                          <>
                             <td
-                              className={
-                                style.tdin +
-                                ' text-center col'
-                              }
+                              className={'tdin text-center col'}
                             >
                               {elemento[
                                 col
@@ -138,7 +135,6 @@ function Advogados() {
                                 col
                                 ]}
                             </td>
-                          </>
                         );
                       })}
                       <td className='text-center'>
