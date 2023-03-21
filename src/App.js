@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 import Home from './components/home/Home';
 import NavigationBar from './components/navbar/NavigationBar.js';
@@ -15,6 +15,10 @@ import CadastroAdvogado from './components/cadastro-advogado/CadastroAdvogado';
 import CadastroTitulo from './components/cadastro-titulo/CadastroTitulo';
 
 const App = () => {
+  const [showAdmin, setShowAdmin] = useState(false);
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+  },[]);
   return ( 
     <Router>
       <NavigationBar />
