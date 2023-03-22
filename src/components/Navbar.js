@@ -27,7 +27,7 @@ function Navbar() {
            <Link className={'nav-link'} to='/titulos'><FaFileContract className={style.contract} /> TÍTULOS</Link>
           </li>
           <li className="nav-item">
-           <Link className={'nav-link'} to='/signin'><FaSignInAlt/> LOGIN</Link>
+           <Link className={'nav-link'} to='/login'><FaSignInAlt/> LOGIN</Link>
           </li>
           <li className="nav-item">
            <Link className={'nav-link'} to='https://bit.ly/3n1T7lO' rel='noopener noreferrer'>SUGESTÕES</Link>

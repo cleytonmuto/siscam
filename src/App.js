@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import AuthService from './services/auth.service';
 
 import Home from './components/home/Home';
 import NavigationBar from './components/navbar/NavigationBar.js';
@@ -18,23 +21,28 @@ const App = () => {
   const [showAdmin, setShowAdmin] = useState(false);
   useEffect(() => {
     const user = AuthService.getCurrentUser();
+    if (user) {
+      setShowAdmin(user.roles.includes('ROLE_ADMIN'));
+    }
   },[]);
-  return ( 
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/advogados' element={<Advogados />}/>
-        <Route path='/titulos' element={<Titulos />}/>
-        <Route path='/signin' element={<Login />}/>
-        <Route path='/novoadvogado' element={<NovoAdvogado />}/>
-        <Route path='/advogado/:id' element={<Advogado />}/>
-        <Route path='/novotitulo' element={<NovoTitulo />}/>
-        <Route path='/dash' element={<Dash />}/>
-        <Route path='/cadastroAdvogado' element={<CadastroAdvogado />}/>
-        <Route path='/cadastroTitulo' element={<CadastroTitulo />}/>
-      </Routes>
-    </Router>
+  return (
+    <>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          {showAdmin && (<Route path='/advogados' element={<Advogados />}/>)}
+          {showAdmin && (<Route path='/titulos' element={<Titulos />}/>)}
+          <Route path='/login' element={<Login />}/>
+          {showAdmin && (<Route path='/novoadvogado' element={<NovoAdvogado />}/>)}
+          {showAdmin && (<Route path='/advogado/:id' element={<Advogado />}/>)}
+          {showAdmin && (<Route path='/novotitulo' element={<NovoTitulo />}/>)}
+          <Route path='/dash' element={<Dash />}/>
+          {showAdmin && (<Route path='/cadastroAdvogado' element={<CadastroAdvogado />}/>)}
+          {showAdmin && (<Route path='/cadastroTitulo' element={<CadastroTitulo />}/>)}
+        </Routes>
+      </Router>
+    </>
   );
 } 
 

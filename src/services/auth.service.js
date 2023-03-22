@@ -14,7 +14,6 @@ const login = (data) => {
       if (response.data.accessToken) {
         localStorage.setItem('email', response.data.email);
         localStorage.setItem('user', JSON.stringify(response.data));
-        localStorage.setItem('department', response.data.department);
       }
       return response;
     })
@@ -35,10 +34,6 @@ const getEmail = () => {
   return localStorage.getItem('email');
 }
 
-const getDepartment = () => {
-  return localStorage.getItem('department');
-}
-
 const changePassword = (email, oldPassword, newPassword, repeatPassword) => {
   return axios.post(APIURL.concat('changepass'), {
     email, oldPassword, newPassword, repeatPassword
@@ -50,6 +45,6 @@ const changeNewPassword = (email, newPassword) => {
 }
 
 const AuthService = { addUser, login, logout, getCurrentUser, getEmail,
-  getDepartment, changePassword, changeNewPassword };
+  changePassword, changeNewPassword };
 
 export default AuthService;

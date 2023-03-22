@@ -1,54 +1,42 @@
 .campopesq {
-  max-width: 40vw;
-  padding-bottom: 0.5em;
- 
-
+    max-width: 40vw;
+    padding-bottom: 0.5em;
 }
+
 @media only screen and (max-width:500px) {
-  .campopesq{
-    max-width: 100vw;
-  } 
-
-  
-}
-
-.campopesq input{
-  /* box-shadow: 0 0 0 0 !important; */
-  border: 0 none !important;
-  color: #1b98E0 !important;
-  border-radius: 25em;
-  box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px !important;
-
+    .campopesq {
+        max-width: 100vw;
+    }
 }
 
 .campopesq input::placeholder {
-
-  color:rgba(27,152,224,0.7) !important;
-
+    color: rgba(27, 152, 224, 0.7) !important;
 }
 
 .campopesq button {
-  border-radius: 25em;
-  width: 5em;
-  box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px;
+    border-radius: 25em;
+    width: 5em;
+    box-shadow: rgb(180 180 180 / 90%) 0px 0px 4px;
 }
-.campopesq button svg{
-  font-size: 1.4em;
-  
+
+.campopesq button svg {
+    font-size: 1.4em;
 }
-.campopesq input{
- border-right: none;
+
+.campopesq input {
+    border-right: none;
 }
-.campopesq button{
-  border-left: none;
+
+.campopesq button {
+    border-left: none;
 }
 
 .buscaadv {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  vertical-align: middle;
-  margin: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+    margin: 0px;
 }
