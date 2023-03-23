@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
-import { BsCheckLg, BsXLg } from 'react-icons/bs';
+import { BsCheckLg} from 'react-icons/bs';
 import AuthService from '../../services/auth.service';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +23,7 @@ const Login = (props) => {
   });
 
   const navigate = useNavigate();
-  
+
   const handleLogin = (data) => {
     AuthService.login(data)
       .then((response) => {
@@ -43,30 +43,24 @@ const Login = (props) => {
       onSubmit={handleLogin}>
       {() => (
         <Form className="container card card-login my-5">
+          <h2 className='text-center'>Login</h2>
           <FormGroup>
-            <FormLabel className="h5 mx-1 my-2">Email</FormLabel>
-            <Field name="email" type="email" size="lg" className="form-control shadow h4 mx-0 mb-2" />
+            <FormLabel className="h6 mx-1 my-2">Email</FormLabel>
+            <Field name="email" type="email" size="lg" className="form-control h4 mx-0 mb-2" />
             <ErrorMessage name="email" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h5 mx-1 my-2">Senha</FormLabel>
-            <Field name="password" type="password" size="lg" className="form-control shadow h4 mx-0 mb-2" />
+            <FormLabel className="h6 mx-1 my-2">Senha</FormLabel>
+            <Field name="password" type="password" size="lg" className="form-control h4 mx-0 mb-2" />
             <ErrorMessage name="password" component="div" className="text-danger" />
           </FormGroup>
-          <Row className="btns-login mt-4 mx-0">
+          <Row className="btns-login mt-2">
             <Col>
-              <FormGroup className="text-center">
-                <Button type="submit" className="btn btn-entrar my-3 px-4 py-3">
-                  <BsCheckLg /><span className="mx-2">ENTRAR</span>
+              <div className="my-4 mb-2">
+                <Button className='btn-entrar' size="lg">
+                  Entrar
                 </Button>
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup className="text-center">
-                <Button type="button" onClick={() => navigate(-1)} className="btn btn-danger my-3 px-4 py-3">
-                  <BsXLg /><span className="mx-2">CANCELAR</span>
-                </Button>
-              </FormGroup>
+              </div>
             </Col>
           </Row>
         </Form>
