@@ -17,8 +17,10 @@ const NavigationBar = (props) => {
   useEffect(() => {
     const user = AuthService.getCurrentUser();
     if (user) {
+      Object.keys(user).forEach((prop)=>console.log(prop,':',user[prop]));
       setCurrentUser(user);
       setShowAdmin(user.roles.includes('ROLE_ADMIN'));
+      console.log('showAdmin =',showAdmin);
     }
   },[]);
 
