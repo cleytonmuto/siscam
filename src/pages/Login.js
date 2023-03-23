@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
@@ -42,7 +41,7 @@ const Login = (props) => {
     <Formik initialValues={initialValues} validationSchema={validationSchema}
       onSubmit={handleLogin}>
       {() => (
-        <Form className="container card card-usuario my-3">
+        <Form className="container card card-usuario my-5">
           <FormGroup>
             <FormLabel className="h4 my-2">Email</FormLabel>
             <Field name="email" type="email" size="lg" className="form-control shadow h4 mx-0 mb-2" />
@@ -56,14 +55,14 @@ const Login = (props) => {
           <Row className="mt-4 mx-0">
             <Col>
               <FormGroup className="text-center">
-                <Button type="submit" className="btn btn-primary btn-block col-4 px-4 py-3">
+                <Button type="submit" className="btn btn-primary btn-block px-4 py-3">
                   <BsCheckLg /><span className="mx-2">ENTRAR</span>
                 </Button>
               </FormGroup>
             </Col>
             <Col>
               <FormGroup className="text-center">
-                <Button type="button" onClick={() => navigate(-1)} className="btn btn-primary btn-block col-4 px-4 py-3">
+                <Button type="button" onClick={() => navigate(-1)} className="btn btn-danger btn-block px-4 py-3">
                   <BsXLg /><span className="mx-2">CANCELAR</span>
                 </Button>
               </FormGroup>
