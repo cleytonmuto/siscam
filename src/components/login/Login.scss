@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.card-login{
+    
+    width: 30em;
+    font-family: 'Roboto';
+    
+    .btn-entrar{
+        background-color: #0084d1 ;
+        border-color: #0084d1;
+    }
+
+    .btn-entrar:hover{
+        background-color: #006ba8;
+    }
+
+    .btns-login{
+        border-top: gray 1px solid;
+        
+        
+    }
+}
+

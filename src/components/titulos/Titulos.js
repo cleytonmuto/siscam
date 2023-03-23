@@ -5,7 +5,7 @@ import Pagination from '../Pagination'
 import SearchInput from '../SearchInput'
 import {useLocation} from 'react-router-dom';
 import Message from '../Message';
-import BtnCadastrar from '../BtnCadastrar';
+import BtnCadastrar from '../button-cadastrar/BtnCadastrar';
 import SemCorrespondencia from '../SemCorrespondencia';
 import Loader from '../Loader';
 import ErroBD from '../ErroBD';

@@ -4,7 +4,7 @@ import {FiEdit} from 'react-icons/fi';
 import {VscEye} from 'react-icons/vsc';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-import BtnCadastrar from '../BtnCadastrar';
+import BtnCadastrar from '../button-cadastrar/BtnCadastrar';
 import ErroBD from '../ErroBD';
 import Loader from '../Loader';
 import Message from '../Message';

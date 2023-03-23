@@ -10,7 +10,7 @@ import NavigationBar from './components/navbar/NavigationBar.js';
 import Advogado from './pages/Advogado.js';
 import Advogados from './components/advogados/Advogados.js';
 import Titulos from './components/titulos/Titulos.js';
-import Login from './pages/Login.js';
+import Login from './components/login/Login.js';
 import NovoAdvogado from './pages/NovoAdvogado.js';
 import NovoTitulo from './pages/NovoTitulo.js';
 import Dash from './pages/Dash.js';

@@ -3,9 +3,10 @@ import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
-import AuthService from '../services/auth.service';
+import AuthService from '../../services/auth.service';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 const Login = (props) => {
   const initialValues = {
@@ -41,28 +42,28 @@ const Login = (props) => {
     <Formik initialValues={initialValues} validationSchema={validationSchema}
       onSubmit={handleLogin}>
       {() => (
-        <Form className="container card card-usuario my-5">
+        <Form className="container card card-login my-5">
           <FormGroup>
-            <FormLabel className="h4 my-2">Email</FormLabel>
+            <FormLabel className="h5 mx-1 my-2">Email</FormLabel>
             <Field name="email" type="email" size="lg" className="form-control shadow h4 mx-0 mb-2" />
             <ErrorMessage name="email" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="h4 my-2">Senha</FormLabel>
+            <FormLabel className="h5 mx-1 my-2">Senha</FormLabel>
             <Field name="password" type="password" size="lg" className="form-control shadow h4 mx-0 mb-2" />
             <ErrorMessage name="password" component="div" className="text-danger" />
           </FormGroup>
-          <Row className="mt-4 mx-0">
+          <Row className="btns-login mt-4 mx-0">
             <Col>
               <FormGroup className="text-center">
-                <Button type="submit" className="btn btn-primary btn-block px-4 py-3">
+                <Button type="submit" className="btn btn-entrar my-3 px-4 py-3">
                   <BsCheckLg /><span className="mx-2">ENTRAR</span>
                 </Button>
               </FormGroup>
             </Col>
             <Col>
               <FormGroup className="text-center">
-                <Button type="button" onClick={() => navigate(-1)} className="btn btn-danger btn-block px-4 py-3">
+                <Button type="button" onClick={() => navigate(-1)} className="btn btn-danger my-3 px-4 py-3">
                   <BsXLg /><span className="mx-2">CANCELAR</span>
                 </Button>
               </FormGroup>
