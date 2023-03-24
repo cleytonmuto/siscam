@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
-import { BsCheckLg} from 'react-icons/bs';
 import AuthService from '../../services/auth.service';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
