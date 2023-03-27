@@ -54,7 +54,7 @@ const CadastroTitulo = (props) => {
     <Formik initialValues={initialValues} validationSchema={validationSchema}
       >
         {() => (
-        <Form className="container card card-titulo my-3">
+        <Form className="container card-titulo my-3">
           <h1 className='text-center p-4'>Cadastro de Títulos</h1>
           <FormGroup>
             <FormLabel className="h5 my-2 ">Nome do advogado:</FormLabel> 

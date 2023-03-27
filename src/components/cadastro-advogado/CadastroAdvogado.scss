@@ -3,12 +3,22 @@
 
 .card-advogado{
     width: 30%;
-    background: none;
-    border: none;
+    background-color: #e9ecef;
+    height: 100vh;
+
 
     .form-control{
         border-radius: 0%;
         padding: 0.9em;
+        background-color: white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid #3084d1;
+    }
+
+    .text-danger{
+        font-family: 'Roboto';
     }
     
     h1{
@@ -24,9 +34,8 @@
     
 
     .btns{
-
-        margin-bottom: 3em;
-        margin-top: 2em;
+        margin-top: 3em;
+        padding-bottom: 5em;
 
         .btnSubmit {
             background-color: #1b98e0;
