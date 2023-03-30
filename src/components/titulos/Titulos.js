@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import './Titulos.scss';
 import Pagination from '../Pagination'
 import SearchInput from '../SearchInput'
 import {useLocation} from 'react-router-dom';
@@ -9,11 +10,10 @@ import SemCorrespondencia from '../SemCorrespondencia';
 import Loader from '../Loader';
 import ErroBD from '../ErroBD';
 import TituloPage from '../TituloPage';
-import './TitulosPage.scss';
 
 const LIMIT = 10;
 
-const TitulosPage = () => {
+const Titulos = () => {
 
   const [offset, setOffset] = useState(0);
   const [page, setPage] = useState(0);
@@ -114,4 +114,4 @@ const TitulosPage = () => {
   );
 }
 
-export default TitulosPage;
+export default Titulos;
