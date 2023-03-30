@@ -5,7 +5,7 @@
     button {
         border-radius: 25em;
         width: 5em;
-        box-shadow: rgba(180, 180, 180, 0.9) 0px 0px 4px;
+        background-color: rgb(223, 223, 223);
         border-left: none;
 
         svg{
@@ -14,7 +14,7 @@
     }
 
     input::placeholder {
-        color: rgba(27, 152, 224, 0.7) !important;
+        color: black;
     }
     
 }
