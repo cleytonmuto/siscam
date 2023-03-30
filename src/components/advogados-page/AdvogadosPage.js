@@ -13,12 +13,12 @@ import SearchInput from '../SearchInput';
 import SemCorrespondencia from '../SemCorrespondencia';
 import TituloPage from '../TituloPage';
 
-import './Advogados.scss';
+import './AdvogadosPage.scss';
 
 
 const LIMIT = 10;
 
-const Advogados = () => {
+const AdvogadosPage = () => {
   const [campoPesquisa, setCampoPesquisa] = useState('');
   const [totalAdvogados, setTotalAdvogados] = useState([]);
   const [dadosAdvogados, setDadosAdvogados] = useState([]);
@@ -166,4 +166,4 @@ const Advogados = () => {
     </div>
   );
 }
-export default Advogados;
+export default AdvogadosPage;
