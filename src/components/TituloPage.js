@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './TituloPage.module.css';
+import './TituloPage.scss';
 
 const TituloPage = ({titulo}) => {
   return(
     <>
-      <div className={style.titulo}>
+      <div className='titulo'>
         {titulo}
       </div>
       <hr/>
