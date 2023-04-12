@@ -1,12 +1,14 @@
 import React from 'react';
-import style from './SemCorrespondencia.module.css';
-import NaoEncontrei from '../images/NaoEncontrei.svg'
-function SemCorrespondencia(){
+import './SemCorrespondencia.scss';
+import NaoEncontrei from '../images/NaoEncontrei.svg';
+
+
+const SemCorrespondencia = () => {
   return(
-    <div className={'container-fluid ' + style.div_container}>
-    <div className={style.semCorrespondencia}>
-     <div className={style.colums}><img src={NaoEncontrei} alt='Não enontrei'/></div> 
-      <div className={style.colums}>Não há resultados para a sua consulta!</div>
+    <div className='container-fluid div_container'>
+    <div className='semCorrespondencia'>
+     <div className='colums'><img src={NaoEncontrei} alt='Não enontrei'/></div> 
+      <div className='colums'>Não há resultados para a sua consulta!</div>
     </div>
   </div>
   )
