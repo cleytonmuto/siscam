@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 import AdvogadoForm from '../components/advogado/AdvogadoForm';
 import './Advogado.scss';
 
@@ -66,9 +67,9 @@ const Advogado = () => {
           ></AdvogadoForm>
         </div>
       )}
-      <button onClick={toggleProjectForm}>
+      <Button className='editBtn' onClick={toggleProjectForm}>
         {!mostraAdvogadoForm ? 'Editar advogado' : 'Fechar'}
-      </button>
+      </Button>
     </div>
   );
 }

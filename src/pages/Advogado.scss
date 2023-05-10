@@ -1,36 +1,38 @@
 .advogado_details {
     padding: 2em;
-
+    width: 50em;
+    margin: auto;
+    
     h1 {
         margin-bottom: 0.5em;
-        background-color: #1b98e0 !important;
+        background-color: #0084d1;
         color: #fff;
         padding: 0.4em;
+        text-align: center;
     }
 
     h2,p {
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
+        border-bottom: 1px solid #0084d1;
+        background-color: white;
+        padding: 1em;
     }
 
     span {
         font-weight: bold;
     }
 
-    button {
-        margin: 1em;
-        background-color: #1b98e0 !important;
-        border: none !important;
-        color: #fff;
-        width: 250px;
+    .editBtn{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 38px;
+        margin: auto;
+        margin-top: 2em;
+        background-color: #0084d1;
+        border: none;
+        padding: 0.8em;
     }
-    button:hover{
-        background-color: rgba(33, 219, 174, 0.9) !important;
-        border: none !important;
+
+    .editBtn:hover{
+        background-color: #1676ad;
     }
 
     .advogado_info {

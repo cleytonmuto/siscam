@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .NavLogo{
     position: absolute;
     margin-left: 1em;
@@ -12,7 +12,7 @@
         margin-left: 1em;
         font-size: 1.3em;
         font-family:'Pacifico';
-        font-style: italic;
+        font-style: oblique;
         color: #0084d1;  
         vertical-align: sub;
     }   
@@ -26,8 +26,9 @@
     justify-content: center;
     a{
         font-size: 1.1em;
-        font-family: 'Roboto';
         font-weight: 600;
+        border-radius: 5px;
+        
     }
     a:hover{
         background-color: #0084d1;

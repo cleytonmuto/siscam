@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Input from '../form/Input';
 import SubmitButton from '../form/SubmitButton';
-import styles from './TituloForm.module.css';
+import './TituloForm.scss';
 
 function TituloForm({ handleSubmit, btnText, tituloData }) {
 
@@ -17,7 +17,7 @@ function TituloForm({ handleSubmit, btnText, tituloData }) {
   }
 
   return (
-    <form onSubmit={submit} className={styles.form}>
+    <form onSubmit={submit} className='form'>
       <Input
         type="text"
         text="Nome do advogado"

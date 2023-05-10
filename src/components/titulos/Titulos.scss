@@ -1,16 +1,16 @@
 td, tr {
     vertical-align: middle;
-    color:#333 !important;
+    color:black;
 }
 
 th {
     color:black;
-    font-size: 1.1em !important;
+    font-size: 1.1em;
     font-weight: 900;
 }
 
 table {
-    background-color: #fff;
+    background-color: white;
 }
 
 .div_container {
@@ -20,10 +20,3 @@ table {
     border-radius: 15px;
 }
 
-.paginacao {
-    background-color: #fff;
-    width: 98%;
-    display: flex;
-    align-items: flex-start;
-    padding: 0px;
-}

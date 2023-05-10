@@ -1,9 +1,9 @@
 import React from "react";
-import {useState} from 'react'
+import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {FcSearch} from 'react-icons/fc';
+import { FcSearch } from 'react-icons/fc';
 import useDebounce from './useDebounce';
-import style from './SearchInput.module.css';
+import './SearchInput.scss';
 
 const SearchInput = ({ value, onChange }) => {
   const [displayValue, setDisplayValue] = useState(value);
@@ -14,12 +14,11 @@ const SearchInput = ({ value, onChange }) => {
   }
 
   return (
-    <div className={style.buscaadv}>
-    <div className={style.campopesq + " input-group mb-1"}>
+    <div className="campopesq input-group mb-1">
       <input required type="search" value={displayValue} onChange={handleChange} className="form-control" placeholder="Pesquisar..." aria-label="Recipient's username" aria-describedby="btnPesquisarAdv" />
-     <button class="btn btn-outline-secondary" type="button" disabled id="btnPesquisarAdv"><FcSearch /></button> 
-    </div>
+      <button class="btn btn-outline-secondary" type="button" id="btnPesquisarAdv"><FcSearch /></button>
     </div>
   );
-};;
+};
+
 export default SearchInput;

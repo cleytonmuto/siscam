@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Input from '../form/Input';
 import SubmitButton from '../form/SubmitButton';
-import styles from './AdvogadoForm.module.css';
+import './AdvogadoForm.scss';
 
 const AdvogadoForm = ({handleSubmit, btnText, advogadoData}) => {
 
@@ -17,7 +17,7 @@ const AdvogadoForm = ({handleSubmit, btnText, advogadoData}) => {
   }
 
   return (
-    <form onSubmit={submit} className={styles.form}>
+    <form onSubmit={submit} className='form'>
       <Input
         type="text"
         text="Nome"
