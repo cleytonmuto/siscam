@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
 import AuthService from '../../services/auth.service';
@@ -15,8 +15,8 @@ const Login = (props) => {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .required('Informe seu email.')
-      .email('O email deve conter "@" e ponto "."'),
+      .required('Informe o número da OAB')
+      .min(6, 'Informe os 6 digitos da OAB '),
     password: Yup.string()
       .required('Informe sua senha.')
   });
@@ -44,7 +44,7 @@ const Login = (props) => {
         <Form className="container card card-login my-5">
           <h2 className='text-center'>Login</h2>
           <FormGroup>
-            <FormLabel className="h6 mx-1 my-2">Email</FormLabel>
+            <FormLabel className="h6 mx-1 my-2">OAB</FormLabel>
             <Field name="email" type="email" size="lg" className="form-control h4 mx-0 mb-2" />
             <ErrorMessage name="email" component="div" className="text-danger" />
           </FormGroup>
