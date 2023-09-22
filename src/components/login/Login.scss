@@ -23,6 +23,11 @@
         border-color: #238636;
         font-size: 1em;
         width: 100%;
+        
+        .iconBtn{
+            vertical-align: sub;
+            margin-right: 0.2em;
+        }
     }
 
     .btn-entrar:hover {
