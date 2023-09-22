@@ -43,7 +43,7 @@ const Titulos = () => {
   }, [campoPesquisa, offset, page]);
 
   const colunas = [];
-  if (dadosTitulos !== []) {
+  if (dadosTitulos.length !== 0) {
     for (const x in dadosTitulos[0]) {
       colunas.push(x);
     }
