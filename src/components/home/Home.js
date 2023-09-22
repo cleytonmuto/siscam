@@ -7,10 +7,10 @@ import './Home.scss'
 
 const Home = () => {
   return (
-    <div className='container textHome'>
+    <section className='container textHome'>
       <h1>Bem-vindo (a) ao  <span className='text-SISCAM'>SISCAM-PGE/PA</span></h1>
-      <Button as={Link} to="/login" className='btn-login my-4'><FaSignInAlt className="iconNav"/> Login</Button>
-    </div>
+      <Button as={Link} to="/login" className='btn-login px-4 py-2 my-4'><FaSignInAlt className="iconNav"/> Login</Button>
+    </section>
   );
 }
 

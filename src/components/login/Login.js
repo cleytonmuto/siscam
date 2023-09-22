@@ -14,9 +14,9 @@ const Login = (props) => {
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
+    oab: Yup.string()
       .required('Informe o número da OAB')
-      .min(6, 'Informe os 6 digitos da OAB '),
+      .length(6, 'OAB incorreta'),
     password: Yup.string()
       .required('Informe sua senha.')
   });
@@ -32,7 +32,7 @@ const Login = (props) => {
         window.location.reload();
       })
       .catch((error) => {
-        alert('Login ou senha inválidos!');
+        alert('OAB ou senha inválidos!');
         console.log(error);
       });
   };
@@ -45,8 +45,8 @@ const Login = (props) => {
           <h2 className='text-center'>Login</h2>
           <FormGroup>
             <FormLabel className="h6 mx-1 my-2">OAB</FormLabel>
-            <Field name="email" type="email" size="lg" className="form-control h4 mx-0 mb-2" />
-            <ErrorMessage name="email" component="div" className="text-danger" />
+            <Field name="oab" type="string" size="lg" className="form-control h4 mx-0 mb-2" placeholder="Somente números (Ex: 000000)" />
+            <ErrorMessage name="oab" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h6 mx-1 my-2">Senha</FormLabel>
