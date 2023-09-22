@@ -52,7 +52,7 @@ const Advogados = () => {
   }, [campoPesquisa, page, offset]);
 
   let colunas = [];
-  if (dadosAdvogados !== []) {
+  if (dadosAdvogados.length !== 0) {
     for (const x in dadosAdvogados[0]) {
       colunas.push(x);
     }
