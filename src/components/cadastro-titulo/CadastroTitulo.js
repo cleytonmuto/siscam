@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { FormGroup, FormLabel, Row, Col } from 'react-bootstrap';
+import { FormGroup, FormLabel, Row, Col, Accordion } from 'react-bootstrap';
 import { BsCheckLg, BsXLg } from 'react-icons/bs';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
@@ -12,13 +12,13 @@ const CadastroTitulo = (props) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required('Informe o nome completo do advogado')
-      .min(5,'Informe o nome completo do advogado'),
+      .min(5, 'Informe o nome completo do advogado'),
     numero: Yup.string()
       .required('Informe o número do título')
-      .length(20,'O número do título deve estar no formato xxxxxxx-xx.xxxx.x.xx.xxxx'),
+      .length(20, 'O número do título deve estar no formato xxxxxxx-xx.xxxx.x.xx.xxxx'),
     assistido: Yup.string()
       .required('Informe o nome do assistido')
-      .min(5,'Informe o nome completo do assistido'),
+      .min(5, 'Informe o nome completo do assistido'),
     acesso: Yup.string()
       .required('Informe o acesso')
       .min(5, 'Informe o acesso'),
@@ -36,8 +36,8 @@ const CadastroTitulo = (props) => {
 
   const navigate = useNavigate();
 
-  
- 
+
+
 
   const initialValues = {
     name: '',
@@ -45,19 +45,39 @@ const CadastroTitulo = (props) => {
     assistido: '',
     arbitrado: '',
     pleiteado: '',
-    acordado:'',
+    acordado: '',
     judicial: '',
     situacao: ''
   };
 
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema}
-      >
-        {() => (
+    >
+      {() => (
         <Form className="container card-titulo my-3">
-          <h1 className='text-center p-4'>Cadastro de Títulos</h1>
+
+          <div className='divAvisos'>
+
+            <h1 className='text-center p-4'>Cadastro de Títulos</h1>
+
+            <Accordion defaultActiveKey={['0']} alwaysOpen>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Descrição e informações</Accordion.Header>
+                <Accordion.Body>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                  aliquip ex ea commodo consequat. Duis aute irure dolor in
+                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                  culpa qui officia deserunt mollit anim id est laborum.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+
           <FormGroup>
-            <FormLabel className="h5 my-2 ">Nome do advogado:</FormLabel> 
+            <FormLabel className="h5 my-2 ">Nome do advogado:</FormLabel>
             <Field placeholder='Informe o nome do advogado' name="name" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="name" component="div" className="text-danger" />
           </FormGroup>
@@ -88,12 +108,12 @@ const CadastroTitulo = (props) => {
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Judicial:</FormLabel>
-            <Field placeholder='Informe o valor judicial'  name="judicial" type="number" size="lg" className="form-control h5 mx-0 mb-2" />
+            <Field placeholder='Informe o valor judicial' name="judicial" type="number" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="judicial" component="div" className="text-danger" />
           </FormGroup>
           <FormGroup>
             <FormLabel className="h5 my-2">Situação:</FormLabel>
-            <Field placeholder='Informe a situação'  name="situacao" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
+            <Field placeholder='Informe a situação' name="situacao" type="text" size="lg" className="form-control h5 mx-0 mb-2" />
             <ErrorMessage name="situacao" component="div" className="text-danger" />
           </FormGroup>
           <Row className="btns mx-0">
@@ -104,7 +124,7 @@ const CadastroTitulo = (props) => {
                 </Button>
               </FormGroup>
             </Col>
-            <Col>  
+            <Col>
               <FormGroup className="text-center">
                 <Button type="button" onClick={() => navigate(-1)} className="btnCancel btn-danger shadow-lg">
                   <BsXLg /><span className="mx-2">CANCELAR</span>
