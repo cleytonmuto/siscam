@@ -4,7 +4,6 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { GoLaw } from 'react-icons/go';
 import { FaSignInAlt, FaHome } from 'react-icons/fa';
 import { FaFileContract } from 'react-icons/fa';
-import { BiLogOut } from 'react-icons/bi';
 import AuthService from '../../services/auth.service';
 import { useNavigate } from 'react-router-dom';
 import './NavigationBar.scss';
@@ -63,8 +62,8 @@ const NavigationBar = (props) => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavLink className="mx-2" activeClassName="active" to="/" as={Link} onClick={closeNavbar}> <FaHome size={20} className="iconNav" /> Inicio</NavLink>
-              <NavLink className="mx-2" activeClassName="active" to="/advogados" as={Link} onClick={closeNavbar}> <GoLaw size={20} className="iconNav" /> Advogados</NavLink>
-              <NavLink className="mx-2" activeClassName="active" to="/titulos" as={Link} onClick={closeNavbar}> <FaFileContract size={20} className="iconNav" /> Títulos</NavLink>
+              {showAdmin && (<NavLink className="mx-2" activeClassName="active" to="/advogados" as={Link} onClick={closeNavbar}> <GoLaw size={20} className="iconNav" /> Advogados</NavLink>)}
+              {showAdmin && (<NavLink className="mx-2" activeClassName="active" to="/titulos" as={Link} onClick={closeNavbar}> <FaFileContract size={20} className="iconNav" /> Títulos</NavLink>)}
             </Nav>
             <div className='btnLogin'>
               <Button to="/login" as={Link} onClick={closeNavbar} className="btn mx-2"> <FaSignInAlt size={20} className="iconNav" /> Login</Button>
