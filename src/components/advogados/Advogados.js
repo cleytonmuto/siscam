@@ -1,169 +1,122 @@
-import axios from 'axios';
-import {useState, useEffect} from 'react';
-import {FiEdit} from 'react-icons/fi';
-import {VscEye} from 'react-icons/vsc';
-import {Link} from 'react-router-dom';
-import {useLocation} from 'react-router-dom';
-import BtnCadastrar from '../button-cadastrar/BtnCadastrar';
-import ErroBD from '../ErroBD';
-import Loader from '../Loader';
-import Message from '../Message';
-import Pagination from '../Pagination';
-import SearchInput from '../SearchInput';
-import SemCorrespondencia from '../SemCorrespondencia';
-import TituloPage from '../TituloPage';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import './Advogados.scss';
+import { Button, Container, Table, Form } from 'react-bootstrap';
+import { FiEdit } from 'react-icons/fi';
+import { AiFillEye } from 'react-icons/ai';
+import PaginationTable from "../Pagination/Pagination";
+import { Link } from "react-router-dom";
 
-
-const LIMIT = 10;
+const ELEMENTS_PER_PAGE = 10;
 
 const Advogados = () => {
-  const [campoPesquisa, setCampoPesquisa] = useState('');
-  const [totalAdvogados, setTotalAdvogados] = useState([]);
-  const [dadosAdvogados, setDadosAdvogados] = useState([]);
-  const [offset, setOffset] = useState(0);
-  const [page, setPage] = useState(0);
 
-  const [semCorrespondenciaState, setSemCorrespondenciaState] = useState(false);
-  const [erroBD, setErroBD] = useState(false);
-  const [removeLoader, setRemoveLoader] = useState(true);
+    const [advogados, setAdvogados] = useState([]);
+    const [termoBusca, setTermoBusca] = useState("");
+    const [paginaAtual, setPaginaAtual] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
-    axios.post(
-        `${process.env.REACT_APP_APIURL}/api/usuarios/search?offset=${offset}&page=${page}&limit=${LIMIT}`,
-        { termo: campoPesquisa }
-      )
-      .then((dados) => {
-        setDadosAdvogados(dados.data.rows);
-        setTotalAdvogados(dados.data.count);
-        setRemoveLoader(false);
-        setErroBD(false);
-        setSemCorrespondenciaState(true)
-      })
-      .catch((erro) => {
-        console.log(
-          'não foi possível recuperar os dados da rota digitada'
+    const buscarAdvogados = async () => {
+        try {
+            console.log("termoBusca:", termoBusca);
+
+            const response = await axios.get(
+                `${process.env.REACT_APP_APIURL}/api/usuarios/all?page=${paginaAtual}&limit=${ELEMENTS_PER_PAGE}&termo=${termoBusca}`
+            );
+
+            setAdvogados(response.data);
+
+            setTotalPages(Math.ceil(response.headers["x-total-count"] / ELEMENTS_PER_PAGE));
+        } catch (error) {
+            console.error("Erro ao buscar advogados:", error);
+        }
+    };
+
+
+
+    useEffect(() => {
+        buscarAdvogados();
+    }, [termoBusca, paginaAtual]);
+
+    const handleBuscaChange = (event) => {
+        if (event && event.target) {
+            const novoTermoBusca = event.target.value;
+            setTermoBusca(novoTermoBusca);
+            setPaginaAtual(1);
+            buscarAdvogados();
+            console.log("Termo de busca atualizado:", novoTermoBusca);
+        }
+    };
+
+    const handlePageChange = (newPage) => {
+        setPaginaAtual(newPage);
+    };
+
+    const advogadosFiltrados = advogados.filter((advogado) => {
+        const { nome, oab, cpf, telefone, email } = advogado;
+        const termoLowerCase = termoBusca.toLowerCase();
+
+        return (
+            nome.toLowerCase().includes(termoLowerCase) ||
+            oab.toLowerCase().includes(termoLowerCase) ||
+            cpf.toLowerCase().includes(termoLowerCase) ||
+            telefone.toLowerCase().includes(termoLowerCase) ||
+            email.toLowerCase().includes(termoLowerCase)
         );
-        setErroBD(true);
-        setRemoveLoader(false);
-        setSemCorrespondenciaState(false);
-      });
-  }, [campoPesquisa, page, offset]);
+    });
 
-  let colunas = [];
-  if (dadosAdvogados.length !== 0) {
-    for (const x in dadosAdvogados[0]) {
-      colunas.push(x);
-    }
-  }
-
-  const location = useLocation();
-  let message = '';
-  let type = '';
-
-  if (location.state) {
-    message = location.state.message;
-    type = location.state.type;
-  }
-
-  return (
-    <div className={'container-fluid divadvogados'}>
-      <div>
-        {message && <Message type={type} msg={message}></Message>}
-      </div>
-      <BtnCadastrar dest={'/cadastroAdvogado'} entity={'Advogado'} />
-      <SearchInput
-        value={campoPesquisa}
-        onChange={(search) => setCampoPesquisa(search)}
-      />
-      <Pagination
-        limit={LIMIT}
-        total={totalAdvogados}
-        offset={offset}
-        setOffset={setOffset}
-        setPage={setPage}
-      />
-      <div className={'container-fluid div_container'}>
-        <TituloPage titulo='ADVOGADOS' />
-        {dadosAdvogados.length > 0 ? (
-          <div className='table-responsive'>
-            <table className='table table-hover'>
-              <thead>
-                <tr>
-                  {colunas.map((colunas, i) => {
-                    return (
-                      <th
-                        scope='row'
-                        className='col-1 text-center'
-                        key={i}
-                      >
-                        {colunas.toLowerCase()}
-                      </th>
-                    );
-                  })}
-                  <th
-                    scope='row'
-                    className='col-1 text-center'
-                    key={210}
-                  >
-                    <strong>ações</strong>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {dadosAdvogados.map((elemento, i) => {
-                  return (
-                    <tr>
-                      {colunas.map((col, i) => {
-                        return (
-                            <td
-                              className={'tdin text-center col'}
-                            >
-                              {elemento[
-                                col
-                              ].length >
-                                40
-                                ? elemento[
-                                  col
-                                ].substring(
-                                  0,
-                                  40
-                                ) +
-                                '...'
-                                : elemento[
-                                col
-                                ]}
-                            </td>
-                        );
-                      })}
-                      <td className='text-center'>
-                        <span className='align-middle'>
-                          <Link>
-                            <FiEdit />{' '}
-                            Editar
-                          </Link>
-                        </span>
-                        <span className='align-middle'>
-                          <Link
-                            to={`/advogado/${dadosAdvogados[i].id}`}
-                          >
-                            <VscEye />{' '}
-                            Visualizar
-                          </Link>
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-        ) : erroBD ? <ErroBD /> : semCorrespondenciaState && <SemCorrespondencia />}
-        {removeLoader && (<Loader />)}
-      </div>
-    </div>
-  );
+    return (
+        <section id="advogados">
+            <h1>ADVOGADOS</h1>
+            <Container>
+                <Form.Control
+                    placeholder="Pesquisa"
+                    className="inputSearch"
+                    value={termoBusca}
+                    onChange={handleBuscaChange}
+                />
+            </Container>
+            <div className="btnAdd">
+                <Button> + Cadastrar Advogado</Button>
+            </div>
+            <PaginationTable
+                className="pagination"
+                activePage={paginaAtual}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+            />
+            <div className="tableAdvogados">
+                <Table className="table" striped bordered hover size="sm">
+                    <thead>
+                        <tr className="titleTable">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>OAB</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Editar</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {advogadosFiltrados.map((advogado) => (
+                            <tr key={advogado.id}>
+                                <td>{advogado.id}</td>
+                                <td>{advogado.nome}</td>
+                                <td>{advogado.oab}</td>
+                                <td>{advogado.cpf}</td>
+                                <td>{advogado.telefone}</td>
+                                <td>{advogado.email}</td>
+                                <td><Link className="actionLink"><FiEdit className="mx-3" size={20} /></Link></td>
+                                <td><Link className="actionLink"><AiFillEye className="mx-3" size={20} /></Link></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
+        </section>
+    );
 }
+
 export default Advogados;

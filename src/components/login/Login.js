@@ -1,72 +1,36 @@
-import React from 'react';
-import { Button, Container } from 'react-bootstrap';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { FormGroup, FormLabel, Col, Row } from 'react-bootstrap';
-import { FaSignInAlt } from 'react-icons/fa';
-import AuthService from '../../services/auth.service';
-import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
 import './Login.scss';
+import { Button, Card, Container, Form } from "react-bootstrap";
 
-const Login = (props) => {
-  const initialValues = {
-    user: '',
-    password: ''
-  };
+const Login = () => {
+    return (
+        <section id="Login">
 
-  const validationSchema = Yup.object().shape({
-    user: Yup.string()
-      .required('Informe o login de usuário'),
-    password: Yup.string()
-      .required('Informe sua senha.')
-  });
+            <Container>
+                <Card className="cardLogin">
+                    <h1>Login</h1>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
 
-  const navigate = useNavigate();
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+                </Card>
+            </Container>
 
-  const handleLogin = (data) => {
-    AuthService.login(data)
-      .then((response) => {
-        console.log(`handleLogin response = ${response}`);
-        alert(response.data.message);
-        navigate('/titulos');
-        window.location.reload();
-      })
-      .catch((error) => {
-        alert('Usuário ou Senha inválidos!');
-        console.log(error);
-      });
-  };
-
-  return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema}
-      onSubmit={handleLogin}>
-      {() => (
-        <Form className="container card card-login my-5">
-          <h2 className='text-center'>Login</h2>
-          <FormGroup>
-            <FormLabel className="h6 mx-1 my-2">Usuário</FormLabel>
-            <Field name="user" type="string" size="lg" className="form-control h4 mx-0 mb-2" />
-            <ErrorMessage name="user" component="div" className="text-danger" />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel className="h6 mx-1 my-2">Senha</FormLabel>
-            <Field name="password" type="password" size="lg" className="form-control h4 mx-0 mb-2" />
-            <ErrorMessage name="password" component="div" className="text-danger" />
-          </FormGroup>
-          <Row className="btns-login mt-2">
-            <Col>
-              <div className="my-4 mb-2">
-                <Button className='btn-entrar' size="lg">
-                  <FaSignInAlt className='iconBtn' size={20} />
-                  Entrar
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </Form>
-      )}
-    </Formik>
-  );
+        </section>
+    );
 }
 
 export default Login;

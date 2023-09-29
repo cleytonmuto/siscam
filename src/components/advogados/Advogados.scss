@@ -1,77 +1,61 @@
-/* *{
-  border: 1px solid black;
-}  */
+#advogados {
 
-tr {
-    vertical-align: middle;
-}
-
-div {
-    a {
-        color: #1b98e0;
-        text-decoration: none;
-        font-size: 1.1em;
-    }
-}
-
-td  {
-    div a{
-        margin: -15px;
-        padding: -15px;
-    }
-
-    a {
-        color: #555 !important;
-    }
-    
-}
-
-th {
-    color: #1b98e0 !important;
-}
-
-.fd {
-    margin: 1em;
-    height: 20px;
-    width: 98%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-
-    button {
-        margin: 1em;
-        background-color: #1b98e0 !important;
-        border: none !important;
-        color: #fff;
-        width: 250px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 38px;
-    }
-}
-
-.div_container {
-    background-color: #fff;
-    width: 98%;
-    padding: 0.5em 0.5em 0.1em 0.5em;
-    border-radius: 15px;
-
-    span {
+    h1 {
         text-align: center;
-        display: inline-block;
-        white-space: nowrap;
+        margin-top: 1em;
+        font-weight: bold;
+        color: #13547c;
+        
     }
-    span a:hover {
-        transition: 0.7s;
-        color: #14213d;
-        border-bottom: 1px #14213d solid;
+
+    .inputSearch{
+        margin: auto;
+        width: 50em;
+
+        @media (max-width:720px) {
+            width:100%;
+        }
+    }
+
+    .btnAdd {
+        margin-top: 2em;
+        text-align: center;
+
+        Button {
+            border: none;
+            background-color: #13547c;
+
+            &:hover{
+                background-color: #1c7ab4;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 2em;
+        padding-left: 6em;
+        padding-right: 6em;
+
+        @media (max-width: 720px) {
+            padding-left: 0.8em;
+            padding-right: 0.8em;
+        }
+    }
+
+    .tableAdvogados {
+        overflow-x: auto;
+        text-align: center;
+        padding-left: 6em;
+        padding-right: 6em;
+
+        @media (max-width: 720px) {
+            padding-left: 0.8em;
+            padding-right: 0.8em;
+        }
+
+
+        .actionLink {
+            color: black;
+        }
     }
 }
-
-.divadvogados svg {
-    font-size: 1em;
-}
-

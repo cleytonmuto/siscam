@@ -1,22 +1,60 @@
-td, tr {
-    vertical-align: middle;
-    color:black;
-}
+#titulos {
 
-th {
-    color:black;
-    font-size: 1.1em;
-    font-weight: 900;
-}
+    h1 {
+        text-align: center;
+        margin-top: 1em;
+        font-weight: bold;
+        color: #13547c;
+    }
 
-table {
-    background-color: white;
-}
+    .inputSearch {
+        margin: auto;
+        width: 50em;
 
-.div_container {
-    background-color: #fff;
-    width: 98%;
-    padding: .5em .5em .1em .5em;
-    border-radius: 15px;
-}
+        @media (max-width:720px) {
+            width: 100%;
+        }
+    }
 
+    .btnAdd {
+        margin-top: 2em;
+        text-align: center;
+
+        Button {
+            border: none;
+            background-color: #13547c;
+
+            &:hover {
+                background-color: #1c7ab4;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 2em;
+        padding-left: 6em;
+        padding-right: 6em;
+
+        @media (max-width: 720px) {
+            padding-left: 0.8em;
+            padding-right: 0.8em;
+        }
+    }
+
+    .tableTitulos {
+        overflow-x: auto;
+        text-align: center;
+        padding-left: 6em;
+        padding-right: 6em;
+
+        @media (max-width: 720px) {
+            padding-left: 0.8em;
+            padding-right: 0.8em;
+        }
+
+
+        .actionLink {
+            color: black;
+        }
+    }
+}

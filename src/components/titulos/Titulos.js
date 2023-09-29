@@ -1,117 +1,110 @@
-import axios from 'axios';
-import {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import './Titulos.scss';
-import Pagination from '../Pagination'
-import SearchInput from '../SearchInput'
-import {useLocation} from 'react-router-dom';
-import Message from '../Message';
-import BtnCadastrar from '../button-cadastrar/BtnCadastrar';
-import SemCorrespondencia from '../SemCorrespondencia';
-import Loader from '../Loader';
-import ErroBD from '../ErroBD';
-import TituloPage from '../TituloPage';
+import { Link } from "react-router-dom";
+import { Container, Button, Table, Form } from "react-bootstrap";
+import PaginationTable from "../Pagination/Pagination";
 
-const LIMIT = 10;
+const ELEMENTS_PER_PAGE = 5;
 
 const Titulos = () => {
 
-  const [offset, setOffset] = useState(0);
-  const [page, setPage] = useState(0);
-  const [dadosTitulos, setDadosTitulos] = useState([]);
-  const [totalTitulos, setTotalTitulos] = useState([]);
-  const [campoPesquisa, setCampoPesquisa] = useState('');
+    const [titulos, setTitulos] = useState([]);
+    const [termoBusca, setTermoBusca] = useState("");
+    const [resultadosBusca, setResultadosBusca] = useState([]);
+    const [paginaAtual, setPaginaAtual] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
-  const [semCorrespondenciaState, setSemCorrespondenciaState] = useState(false);
-  const [erroBD, setErroBD] = useState(false);
-  const [removeLoader, setRemoveLoader] = useState(true);
+    const buscarTitulo = async () => {
+        try {
+            console.log("paginaAtual:", paginaAtual);
+            console.log("termoBusca:", termoBusca);
+            const response = await axios.get(
+                `${process.env.REACT_APP_APIURL}/api/titulos/all?page=${paginaAtual}&limit=${ELEMENTS_PER_PAGE}&termo=${termoBusca}`
+            );
+            setTitulos(response.data);
+            setTotalPages(Math.ceil(response.headers["x-total-count"] / ELEMENTS_PER_PAGE));
+        } catch (error) {
+            console.error("Erro ao buscar Títulos:", error);
+        }
+    };
 
-  useEffect(() => {
-    axios.post(`${process.env.REACT_APP_APIURL}/api/titulos/search?offset=${offset}&page=${page}&limit=${LIMIT}`, { termo: campoPesquisa })
-      .then((dados) => {
-        setDadosTitulos(dados.data.rows);
-        setTotalTitulos(dados.data.count);
-        setRemoveLoader(false);
-        setErroBD(false);
-        setSemCorrespondenciaState(true);
-      })
-      .catch((erro) => {
-        console.log('não foi possível recuperar os dados da rota digitada');
-        setErroBD(true);
-        setRemoveLoader(false);
-        setSemCorrespondenciaState(false);
-      });
-  }, [campoPesquisa, offset, page]);
+    useEffect(() => {
+        buscarTitulo();
+    }, [paginaAtual, termoBusca]);
 
-  const colunas = [];
-  if (dadosTitulos.length !== 0) {
-    for (const x in dadosTitulos[0]) {
-      colunas.push(x);
-    }
-  }
 
-  const location = useLocation();
-  let message = '';
-  let type = '';
+    const handleBuscaChange = (event) => {
+        if (event && event.target) {
+            setTermoBusca(event.target.value);
+        }
+    };
 
-  if (location.state) {
-    message = location.state.message;
-    type = location.state.type;
-  }
+    const handlePageChange = (newPage) => {
+        setPaginaAtual(newPage);
+    };
 
-  return (
-    <div className="container-fluid">
-      <div>{message && <Message type={type} msg={message}></Message>}</div>
-      <BtnCadastrar dest={'/cadastroTitulo'} entity={'Título'}/>
-      <SearchInput value={campoPesquisa} onChange={(search) => setCampoPesquisa(search)} />
-      <Pagination limit={LIMIT} total={totalTitulos} offset={offset} setOffset={setOffset} setPage={setPage} />
+    return (
+        <section id="titulos">
 
-      <div className={'container-fluid div_container'}>
-        <TituloPage titulo="TÍTULOS" />
+            <h1>TÍTULOS</h1>
 
-        {(dadosTitulos.length > 0 ?
-          (<div className="table-responsive">
-            <table className="table table-hover">
-              <thead>
-                <tr>
-                  {colunas.map((colunas, i) => { return (<th scope='row' className='col-1 text-center' key={i}>{colunas}</th>) })}
-                </tr>
-              </thead>
-              <tbody>
-                {dadosTitulos.map((elemento, i) => {
-                  return (<tr>
-                    {colunas.map((col, i) => {
-                      if (i % 6 === 0 && i > 1) {
-                        return (
-                          <td className={'tdin text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-                          </td>);
-                      }
-                      if (i % 7 === 0 && i > 1) {
-                        return (
-                          <td className={'tdin text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-                          </td>);
-                      }
-                      if (i % 8 === 0 && i > 1) {
-                        return (
-                          <td className={'tdin text-center col-1'}>
-                            {elemento[col].length > 40 ? (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })).substring(0, 40) + "..." : (Number(elemento[col]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}
-                          </td>);
-                      }
-                      return (
-                        <td className={'tdin text-center col-1'}>
-                          {elemento[col].length > 40 ? elemento[col].substring(0, 40) + "..." : elemento[col]}
-                        </td>);
-                    })}
-                  </tr>);
-                })}
-              </tbody>
-            </table>
-          </div>) : erroBD ? <ErroBD /> : semCorrespondenciaState && <SemCorrespondencia />)}
-        {removeLoader && (<Loader />)}
-      </div>
-    </div>
-  );
+            <Container>
+                <Form.Control
+                    placeholder="Pesquisa"
+                    className="inputSearch"
+                />
+            </Container>
+
+            <div className="btnAdd">
+                <Button> + Cadastrar Título</Button>
+            </div>
+
+            <PaginationTable
+                className="pagination"
+                activePage={paginaAtual}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+            />
+
+            <div className="tableTitulos">
+                <Table className="table" striped bordered hover size="sm">
+                    <thead>
+                        <tr className="titleTable">
+                            <th>ID</th>
+                            <th>Advogado</th>
+                            <th>Número</th>
+                            <th>Assistido</th>
+                            <th>Acesso</th>
+                            <th>Arbitrado</th>
+                            <th>Pleiteado</th>
+                            <th>Acordado</th>
+                            <th>Judicial</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {titulos.map((titulo) => (
+                            <tr key={titulo.id}>
+                                <td>{titulo.id}</td>
+                                <td>{titulo.advogado}</td>
+                                <td>{titulo.numero}</td>
+                                <td>{titulo.assistido}</td>
+                                <td>{titulo.acesso}</td>
+                                <td>{titulo.arbitrado}</td>
+                                <td>{titulo.pleiteado}</td>
+                                <td>{titulo.acordado}</td>
+                                <td>{titulo.judicial}</td>
+                                <td>{titulo.situacao}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
+
+
+        </section>
+    );
 }
 
 export default Titulos;
