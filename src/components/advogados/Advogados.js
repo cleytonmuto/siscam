@@ -77,7 +77,9 @@ const Advogados = () => {
                 />
             </Container>
             <div className="btnAdd">
-                <Button> + Cadastrar Advogado</Button>
+                <Link to="/cadastroAdvogado">
+                    <Button to="/cadastroAdvogado"> + Cadastrar Advogado</Button>
+                </Link>
             </div>
             <PaginationTable
                 className="pagination"

@@ -11,6 +11,7 @@ import Home from './components/Home';
 import NavigationBar from './components/NavigationBar/NavigationBar.js';
 import Advogados from './components/Advogados/Advogados';
 import Titulos from './components/Titulos/Titulos';
+import CadastroAdvogado from './components/CadastroAdvogado/CadastroAdvogado';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           <Route exact path='/login' element={<Login />} />
           {showAdmin && (<Route path='/advogados' element={<Advogados />} />)}
           {showAdmin && (<Route path='/titulos' element={<Titulos />} />)}
+          {showAdmin && (<Route path='/cadastroAdvogado' element={<CadastroAdvogado />} />)}
 
         </Routes>
       </Router>

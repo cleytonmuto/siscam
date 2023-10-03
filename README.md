@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+O sistema permite o acompanhamento, em tempo real, da análise do pedido e a mudança de fases:
+1 – Aguardando juntada de documentos
+2 – Aguardando análise
+3 – Análise em andamento (este status ficará até a publicação em definitivo dos resultados)
+4 – Finalizado (integral, parcial ou indeferido)
+5 – Aguardando revisão (caso seja solicitada revisão)
+6 - Revisão em andamento (este status ficará até a publicação em definitivo dos resultados)
+7 – Finalizado Revisão (integral, parcial ou indeferido).

@@ -8,21 +8,28 @@ const Login = () => {
 
             <Container>
                 <Card className="cardLogin">
-                    <h1>LOGIN</h1>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label className="mx-1">Usuário</Form.Label>
-                            <Form.Control type="email" />
-                        </Form.Group>
+                    <h1 className="mb-3">LOGIN</h1>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label className="mx-1">Senha</Form.Label>
-                            <Form.Control type="password"/>
-                        </Form.Group>
-                        <Button className="btnLogin text-center">
-                            Entrar
-                        </Button>
-                    </Form>
+                    <Form.Floating className="mb-3">
+                        <Form.Control
+                            id="floatingInputCustom"
+                            type="email"
+                            placeholder="name@example.com"
+                        />
+                        <label htmlFor="floatingInputCustom">Usuário</label>
+                    </Form.Floating>
+
+                    <Form.Floating className="mb-3">
+                        <Form.Control
+                            id="floatingPasswordCustom"
+                            type="password"
+                            placeholder="Password"
+                        />
+                        <label htmlFor="floatingPasswordCustom">Senha</label>
+                    </Form.Floating>
+                    <Button className="btnLogin text-center">
+                        Entrar
+                    </Button>
                 </Card>
             </Container>
 
